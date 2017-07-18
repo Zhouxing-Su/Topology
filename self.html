@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>拓扑图可视化</title>
+  <title>Topology</title>
   <meta charset="utf-8">
   <style type="text/css" media="screen">
     .node {
-      /*stroke: #fff; /*点的外圈颜色*/*/
+      /*stroke: #fff; 点的外圈颜色*/
       stroke-width: 1.5px;
     }
 
     .link {
       fill: none; /*线中间的填充颜色*/
-      stroke: #bbb; /*线的颜色*/
+      /*stroke: #bbb; 线的颜色*/
     }
 
     /*自己添加*/
@@ -24,6 +24,8 @@
       display: inline-block;
       vertical-align:top;
       width: 200px;
+      margin: 0 auto;
+      text-align:center;
     }
 
     svg{
@@ -35,6 +37,7 @@
       fill: black;
       font: 15px sans-serif;
       text-anchor: start;
+      cursor:default;
     }
 
   </style>
@@ -44,8 +47,9 @@
       <p id="vertix">节点数：</p>
       <p id="edge">边数：</p>
       <button id="hideBtn">隐藏所有标签</button>
+      <button id="showBtn">显示所有标签</button>
   </div>
-  <svg id="canvas" width="960" height="600"></svg>
+  <svg id="canvas" width="1300" height="750"></svg>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -57,15 +61,15 @@ var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
-
 // scaleOrdinal() = Tu() schemeCategory20=hb
 //hb = cb("1f77b4aec7e8ff......"),
 //每六个数字组成一个颜色值#123456
 var color = d3.scaleOrdinal(d3.schemeCategory20);
+var color1 = d3.scaleOrdinal(d3.schemeCategory20c);
 
 // forceLink = Mv()
 var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().distance(20).strength(0.3))
+    .force("link", d3.forceLink().distance(20).strength(0.2))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
@@ -87,17 +91,22 @@ d3.json("json/miserables.json", function(error, graph) {
   links.forEach(function(link) {
     var s = link.source = nodeById.get(link.source),
         t = link.target = nodeById.get(link.target),
-        i = {}; // intermediate node
+        i = {}, // intermediate node
+        v = link.value,
+        g = link.group;
     nodes.push(i);
     links.push({source: s, target: i}, {source: i, target: t});
-    bilinks.push([s, i, t]);
+    bilinks.push([s, i, t, v, g]);
   });
 
+  //console.log(bilinks[0]);
 
   var link = svg.selectAll(".link")
     .data(bilinks)
     .enter().append("path")
-      .attr("class", "link");
+      .attr("class", "link")
+      .attr("stroke-width", function(d) { return d[3]; })
+      .attr("stroke", function(d) {  return color1(d[4]); });
 
   //<$ 显示节点id
 // var node = svg.selectAll(".node")
@@ -126,7 +135,6 @@ d3.json("json/miserables.json", function(error, graph) {
   node.append("text")
       .attr("x", 12)
       .attr("dy", ".35em")
-      .attr("color","#000")
       .text(function(d) { return d.id; });
 
 
@@ -163,10 +171,44 @@ d3.json("json/miserables.json", function(error, graph) {
   d3.select("#hideBtn")
     .on("click", hideAllLabels);
 
-  function hideAllLabels(){
-    $(".node").childern("text").css("display","none");
+  function hideAllLabels(d){
+    node.selectAll("text").each(function(){
+      $(this).hide();
+    });
   }
 
+  //显示所有标签
+  d3.select("#showBtn")
+    .on("click", showAllLabels);
+
+  function showAllLabels(d){
+    node.selectAll("text").each(function(){
+      $(this).show();
+    });
+  }
+
+  //缩放
+  zoom = d3.zoom()
+        .scaleExtent([0.2, 100])
+        .translateExtent([[0, 0], [svg.attr("width"), svg.attr("height")]])
+        .extent([[0, 0], [svg.attr("width"), svg.attr("height")]])
+        .on("zoom", zoomed);
+
+  
+  svg.call(zoom);
+
+  function zoomed() {
+    // var x = d3.mouse(this)[0]/svg.attr("width");
+    // var y = d3.mouse(this)[1]/svg.attr("height");
+    // console.log(x+" "+y+" "+"0");
+    svg.style("transform-origin", "0.5 0.5 0");
+    svg.attr("transform",d3.event.transform);
+    svg.style('transform', 'scale(' + d3.event.transform.k + ')');
+    // var transform = d3.event.transform;
+    // var circle = svg.selectAll("circle")
+    // console.log(transform)
+    // circle.attr("transform", transform);
+  }
 
   //>
   node.append("title")
@@ -197,18 +239,20 @@ function positionNode(d) {
 
 
 function dragstarted(d) {
-  /*这个if表示当点击一个点的时候会轻微修改图中所有节点位置，所设值越大幅度越大*/
+  //alpha是动画的冷却系数，运动过程中会不断减小，直到小于0.005为止，此时动画会停止。
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
   d.fx = d.x, d.fy = d.y;
 }
 
 function dragged(d) {
-  d.fx = d3.event.x, d.fy = d3.event.y;
+  var offset = $("svg").offset(); //获取到这个元素的位置
+  d.fx = d3.event.x, d.fy = d3.event.y;//d.x是当前位置，d.fx是固定位置
 }
 
 function dragended(d) {
   if (!d3.event.active) simulation.alphaTarget(0);
   d.fx = null, d.fy = null;
+
 }
 
 </script>
