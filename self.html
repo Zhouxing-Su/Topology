@@ -50,7 +50,7 @@
 
   </style>
 </head>
-<body>
+<body onload="setTopology()">
   <div id="data">
       <p id="vertix">节点数：</p>
       <p id="edge">边数：</p>
@@ -63,238 +63,284 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 
+function setTopology(JsonFileName = "format.json"){
 
+  var svg = d3.select("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+  // scaleOrdinal() = Tu() schemeCategory20=hb
+  //hb = cb("1f77b4aec7e8ff......"),
+  //每六个数字组成一个颜色值#123456
+  var color = d3.scaleOrdinal(d3.schemeCategory20);
+  var color1 = d3.scaleOrdinal(d3.schemeCategory20c);
 
-// scaleOrdinal() = Tu() schemeCategory20=hb
-//hb = cb("1f77b4aec7e8ff......"),
-//每六个数字组成一个颜色值#123456
-var color = d3.scaleOrdinal(d3.schemeCategory20);
-var color1 = d3.scaleOrdinal(d3.schemeCategory20c);
+  // forceLink = Mv()
+  var simulation = d3.forceSimulation()
+      .force("link", d3.forceLink().distance(linkDistance).strength(0.2))
+      .force("charge", d3.forceManyBody().strength(-50))
+      .force("center", d3.forceCenter(width / 2, height / 2));
 
-// forceLink = Mv()
-var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().distance(linkDistance).strength(0.2))
-    .force("charge", d3.forceManyBody().strength(-50))
-    .force("center", d3.forceCenter(width / 2, height / 2));
-
-// .force('collision', d3.forceCollide().radius(function(d) {
-//       return d.radius
-//     }))
-  //长度
-  function linkDistance(d) {
-    if (d.distance == undefined) {
-      return 30;
+  // .force('collision', d3.forceCollide().radius(function(d) {
+  //       return d.radius
+  //     }))
+    //长度
+    function linkDistance(d) {
+      if (d.length == undefined) {
+        return 30;
+      }
+      else{
+        // console.log(d.length)
+        return d.length;
+      }
     }
-    else{
-      return d.distance;
+
+
+  //读取json文件
+  d3.json("json/"+JsonFileName, function(error, graph) {
+    if (error) throw error;
+
+    //<$ 显示节点数和边数
+    d3.select("#vertix").text("节点数：" + graph.nodes.length);
+    d3.select("#edge").text("边数：" + graph.links.length);
+
+    //>$ 
+
+    var nodes = graph.nodes,
+        nodeById = d3.map(nodes, function(d) { return d.id; }),
+        links = graph.links,
+        bilinks = [];
+
+    links.forEach(function(link) {
+      var s = link.source = nodeById.get(link.source),
+          t = link.target = nodeById.get(link.target),
+          i = {}, // intermediate node
+          v = link.width,
+          d = link.distance,
+          g = link.color;
+          // console.log(i);
+      nodes.push(i);
+      links.push({source: s, target: i}, {source: i, target: t});
+      bilinks.push([s, i, t, v, d, g]);
+    });
+
+    //console.log(bilinks[0]);
+
+    var link = svg.selectAll(".link")
+      .data(bilinks)
+      .enter().append("path")
+        .attr("class", "link")
+        .attr("stroke-width", function(d) { return d[3]; })
+        .attr("stroke", function(d) {  return color1(d[5]); });
+
+    //<$ 显示节点id
+  // var node = svg.selectAll(".node")
+  //     .data(nodes.filter(function(d) { return d.id; }))
+  //     .enter().append("circle")
+  //       .attr("class", "node")
+  //       .attr("r", 5) /*点的内半径*/
+  //       .attr("fill", function(d) { return color(d.color); }) //点的内颜色 color(): Nt()
+  //       .call(d3.drag()  /*鼠标拖拽 对应Fl()函数*/
+  //           .on("start", dragstarted)
+  //           .on("drag", dragged)
+  //           .on("end", dragended));
+    var node = svg.selectAll(".node")
+        .data(nodes.filter(function(d) { return d.id; }))
+        .enter().append("g")
+          .attr("class", "node")
+          .call(d3.drag()  /*鼠标拖拽 对应Fl()函数*/
+              .on("start", dragstarted)
+              .on("drag", dragged)
+              .on("end", dragended));
+
+     node.append("circle")  
+        .attr("r", 5)
+        .style("fill",function(d) { return color(d.color); });
+
+    node.append("text")
+        .attr("x", 12)
+        .attr("dy", ".35em")
+        .text(function(d) {  return d.id; });
+
+  //   $(".link").on( "click", function(d) {
+  //     console.log(d)
+  // });
+
+    node.selectAll("circle")
+      .on("click", showLabel);
+
+    node.selectAll("text")
+      .on("click", hideLabel);
+
+    function showLabel(d){
+      if ($(this).next().is(":hidden")) {
+        $(this).next().show();
+      }
+      else{
+        $(this).next().hide(); 
+      }
+      
     }
-  }
 
 
-//读取json文件
-d3.json("json/miserables.json", function(error, graph) {
-  if (error) throw error;
+    function hideLabel(d) {
+      $(this).hide(); 
+    }
 
-  //<$ 显示节点数和边数
-  d3.select("#vertix").text("节点数：" + graph.nodes.length);
-  d3.select("#edge").text("边数：" + graph.links.length);
+    //隐藏所有标签
+    d3.select("#hideBtn")
+      .on("click", hideAllLabels);
 
-  //>$ 
+    function hideAllLabels(d){
+      node.selectAll("text").each(function(){
+        $(this).hide();
+      });
+    }
 
-  var nodes = graph.nodes,
-      nodeById = d3.map(nodes, function(d) { return d.id; }),
-      links = graph.links,
-      bilinks = [];
+    //显示所有标签
+    d3.select("#showBtn")
+      .on("click", showAllLabels);
 
-  links.forEach(function(link) {
-    var s = link.source = nodeById.get(link.source),
-        t = link.target = nodeById.get(link.target),
-        i = {}, // intermediate node
-        v = link.value,
-        d = link.distance,
-        g = link.group;
-    nodes.push(i);
-    links.push({source: s, target: i}, {source: i, target: t});
-    bilinks.push([s, i, t, v, d, g]);
+    function showAllLabels(d){
+      node.selectAll("text").each(function(){
+        $(this).show();
+      });
+    }
+
+    //缩放
+    zoom = d3.zoom()
+          .scaleExtent([0.2, 100])
+          .translateExtent([[0, 0], [svg.attr("width"), svg.attr("height")]])
+          .extent([[0, 0], [svg.attr("width"), svg.attr("height")]])
+          .on("zoom", zoomed);
+
+    
+    svg.call(zoom);
+
+    function zoomed() {
+      var x = d3.mouse(this)[0]/svg.attr("width")*100;
+      var y = d3.mouse(this)[1]/svg.attr("height")*100;
+      // console.log(x+" "+y+" "+"0");
+      svg.style("transform-origin", x+"% "+y+"% 0");
+      svg.attr("transform",d3.event.transform);
+      svg.style('transform', 'scale(' + d3.event.transform.k + ')');
+    }
+
+
+    
+
+
+    //>
+    node.append("title")
+        .text(function(d) { return d.id; });
+
+    simulation
+        .nodes(nodes)
+        .on("tick", ticked);
+
+    simulation.force("link")
+        .links(links);
+
+    function ticked() {
+      link.attr("d", positionLink);
+      node.attr("transform", positionNode);
+    }
   });
 
-  //console.log(bilinks[0]);
+  function positionLink(d) {
+    //d是路径描述，M是Moveto，移动到，C是Curveto，表示贝塞尔曲线
+    // console.log(d);
+    return "M" + d[0].x + "," + d[0].y
+         + "S" + d[1].x + "," + d[1].y
+         + " " + d[2].x + "," + d[2].y;
+  }
 
-  var link = svg.selectAll(".link")
-    .data(bilinks)
-    .enter().append("path")
-      .attr("class", "link")
-      .attr("stroke-width", function(d) { return d[3]; })
-      .attr("stroke", function(d) {  return color1(d[5]); });
-
-  //<$ 显示节点id
-// var node = svg.selectAll(".node")
-//     .data(nodes.filter(function(d) { return d.id; }))
-//     .enter().append("circle")
-//       .attr("class", "node")
-//       .attr("r", 5) /*点的内半径*/
-//       .attr("fill", function(d) { return color(d.group); }) //点的内颜色 color(): Nt()
-//       .call(d3.drag()  /*鼠标拖拽 对应Fl()函数*/
-//           .on("start", dragstarted)
-//           .on("drag", dragged)
-//           .on("end", dragended));
-  var node = svg.selectAll(".node")
-      .data(nodes.filter(function(d) { return d.id; }))
-      .enter().append("g")
-        .attr("class", "node")
-        .call(d3.drag()  /*鼠标拖拽 对应Fl()函数*/
-            .on("start", dragstarted)
-            .on("drag", dragged)
-            .on("end", dragended));
-
-   node.append("circle")  
-      .attr("r", 5)
-      .style("fill",function(d) { return color(d.group); });
-
-  node.append("text")
-      .attr("x", 12)
-      .attr("dy", ".35em")
-      .text(function(d) { return d.id; });
-
-//   $(".link").on( "click", function(d) {
-//     console.log(d)
-// });
-
-  node.selectAll("circle")
-    .on("click", showLabel);
-
-  node.selectAll("text")
-    .on("click", hideLabel);
-
-  function showLabel(d){
-    if ($(this).next().is(":hidden")) {
-      $(this).next().show();
-    }
-    else{
-      $(this).next().hide(); 
-    }
-    
+  function positionNode(d) {
+    // console.log(d);
+    // d.x = d.x - 5/2 < 0     ? parseInt(Math.random()*20+20) : d.x ;
+    // d.x = d.x + 5/2 > width ? width - parseInt(Math.random()*20+20) : d.x ;
+    // d.y = d.y - 5/2 < 0      ? parseInt(Math.random()*20+20) : d.y ;
+    // d.y = d.y + 5/2 > height ? height - parseInt(Math.random()*20+20) : d.y ;
+    d.x = d.x - 5/2 < 0     ? 5 : d.x ;
+    d.x = d.x + 5/2 > width ? width - 5 : d.x ;
+    d.y = d.y - 5/2 < 0      ? 5 : d.y ;
+    d.y = d.y + 5/2 > height ? height - 5 : d.y ;
+    return "translate(" + d.x + "," + d.y + ")";
   }
 
 
-  function hideLabel(d) {
-    //这里我使用了jquery,dom操作感觉比较方便$(this).attr("value")
-    // alert($(this>"text").is(":hidden"));
-    $(this).hide(); 
-    // if ($(this>"text").is(":hidden")) {
-    //   $(this>"text").show(); 
-    // }
-    // else{
-    //   $(this>"text").hide(); 
-    // }
+  function dragstarted(d) {
+    //alpha是动画的冷却系数，运动过程中会不断减小，直到小于0.005为止，此时动画会停止。
+    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x, d.fy = d.y;
   }
 
-  //隐藏所有标签
-  d3.select("#hideBtn")
-    .on("click", hideAllLabels);
-
-  function hideAllLabels(d){
-    node.selectAll("text").each(function(){
-      $(this).hide();
-    });
+  function dragged(d) {
+    var offset = $("svg").offset(); //获取到这个元素的位置
+    d.fx = d3.event.x, d.fy = d3.event.y;//d.x是当前位置，d.fx是固定位置
   }
 
-  //显示所有标签
-  d3.select("#showBtn")
-    .on("click", showAllLabels);
+  function dragended(d) {
+    if (!d3.event.active) simulation.alphaTarget(0);
+    d.fx = null, d.fy = null;
 
-  function showAllLabels(d){
-    node.selectAll("text").each(function(){
-      $(this).show();
-    });
   }
 
-  //缩放
-  zoom = d3.zoom()
-        .scaleExtent([0.2, 100])
-        .translateExtent([[0, 0], [svg.attr("width"), svg.attr("height")]])
-        .extent([[0, 0], [svg.attr("width"), svg.attr("height")]])
-        .on("zoom", zoomed);
 
+  //切换拓扑图
+  $(document).keydown(function(e){
+     var key =  e.which;
+     if (key == 40 || key == 38) {
+        e.preventDefault();
+     }
+  });
   
-  svg.call(zoom);
-
-  function zoomed() {
-    var x = d3.mouse(this)[0]/svg.attr("width")*100;
-    var y = d3.mouse(this)[1]/svg.attr("height")*100;
-    // console.log(x+" "+y+" "+"0");
-    svg.style("transform-origin", x+"% "+y+"% 0");
-    svg.attr("transform",d3.event.transform);
-    svg.style('transform', 'scale(' + d3.event.transform.k + ')');
-  }
-
-
-  //边缘斥力
-
-
-
-
-  //>
-  node.append("title")
-      .text(function(d) { return d.id; });
-
-  simulation
-      .nodes(nodes)
-      .on("tick", ticked);
-
-  simulation.force("link")
-      .links(links);
-
-  function ticked() {
-    link.attr("d", positionLink);
-    node.attr("transform", positionNode);
-  }
-});
-
-function positionLink(d) {
-  //d是路径描述，M是Moveto，移动到，C是Curveto，表示贝塞尔曲线
-  // console.log(d);
-  return "M" + d[0].x + "," + d[0].y
-       + "S" + d[1].x + "," + d[1].y
-       + " " + d[2].x + "," + d[2].y;
-}
-
-function positionNode(d) {
-  // console.log(d);
-  // d.x = d.x - 5/2 < 0     ? parseInt(Math.random()*20+20) : d.x ;
-  // d.x = d.x + 5/2 > width ? width - parseInt(Math.random()*20+20) : d.x ;
-  // d.y = d.y - 5/2 < 0      ? parseInt(Math.random()*20+20) : d.y ;
-  // d.y = d.y + 5/2 > height ? height - parseInt(Math.random()*20+20) : d.y ;
-  d.x = d.x - 5/2 < 0     ? 5 : d.x ;
-  d.x = d.x + 5/2 > width ? width - 5 : d.x ;
-  d.y = d.y - 5/2 < 0      ? 5 : d.y ;
-  d.y = d.y + 5/2 > height ? height - 5 : d.y ;
-  return "translate(" + d.x + "," + d.y + ")";
-}
-
-
-function dragstarted(d) {
-  //alpha是动画的冷却系数，运动过程中会不断减小，直到小于0.005为止，此时动画会停止。
-  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-  d.fx = d.x, d.fy = d.y;
-}
-
-function dragged(d) {
-  var offset = $("svg").offset(); //获取到这个元素的位置
-  d.fx = d3.event.x, d.fy = d3.event.y;//d.x是当前位置，d.fx是固定位置
-}
-
-function dragended(d) {
-  if (!d3.event.active) simulation.alphaTarget(0);
-  d.fx = null, d.fy = null;
-
+  $(document).keyup(function(e){
+      var key =  e.which;
+      console.log(key);
+      if(key == 40){//down
+        //clear svg
+        var newFileName;
+        console.log(JsonFileName);
+        d3.selectAll("svg > *").remove();
+        if (JsonFileName == "format.json") {
+          newFileName = "format_3.json"
+        }
+        else{
+          var num = parseInt(JsonFileName.match(/\_(\d)/)[1])-1;
+          console.log("page: "+num);
+          if(num == 0){
+            newFileName = "format.json";
+          }
+          else{
+            newFileName = "format_"+num+".json";
+          }
+        }
+        setTopology(newFileName);
+      }
+      else if(key == 38){//up
+        d3.selectAll("svg > *").remove();
+        var newFileName;
+        console.log(JsonFileName);
+        if (JsonFileName == "format.json") {
+          newFileName = "format_1.json"
+        }
+        else{
+          var num = parseInt(JsonFileName.match(/\_(\d)/)[1])+1;
+          console.log("page: "+num);
+          if (num < 4) {
+            newFileName = "format_"+num+".json";
+          }
+          else{
+            newFileName = "format.json";
+          }
+        }
+      setTopology(newFileName);
+      }
+  });
 }
 
 </script>
 
-</body>
 </html>
+</body>
