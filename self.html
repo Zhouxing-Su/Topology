@@ -3,6 +3,9 @@
 <head>
   <title>Topology</title>
   <meta charset="utf-8">
+  <meta   http-equiv="Expires"   CONTENT="0">
+  <meta   http-equiv="Cache-Control"   CONTENT="no-cache">
+  <meta   http-equiv="Pragma"   CONTENT="no-cache">
   <style type="text/css" media="screen">
     *{
       padding: 0px;
@@ -38,7 +41,7 @@
     svg{
       background: rgba(205, 202, 202, 0.2);
       z-index:-1;
-      /*min-height: 99.5vh;*/
+      /*pointer-events: none;*/
     }
   
     svg text {
@@ -47,23 +50,25 @@
       text-anchor: start;
       cursor:default;
     }
-
   </style>
 </head>
 <body onload="setTopology()">
   <div id="data">
       <p id="vertix">节点数：</p>
       <p id="edge">边数：</p>
+      <p id="scale">缩放比例：100%</p>
       <button id="hideBtn">隐藏所有标签</button>
       <button id="showBtn">显示所有标签</button>
   </div>
   <svg width="1300" height="750"></svg>
 
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/d3.v4.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
 <script>
 
 function setTopology(JsonFileName = "format.json"){
+  //获取json文件
+  JsonFileName = window.location.search.substring(1);
 
   var svg = d3.select("svg"),
       width = +svg.attr("width"),
@@ -77,8 +82,8 @@ function setTopology(JsonFileName = "format.json"){
 
   // forceLink = Mv()
   var simulation = d3.forceSimulation()
-      .force("link", d3.forceLink().distance(linkDistance).strength(0.2))
-      .force("charge", d3.forceManyBody().strength(-50))
+      .force("link", d3.forceLink().distance(linkDistance).strength(0.3))
+      .force("charge", d3.forceManyBody())
       .force("center", d3.forceCenter(width / 2, height / 2));
 
   // .force('collision', d3.forceCollide().radius(function(d) {
@@ -118,13 +123,13 @@ function setTopology(JsonFileName = "format.json"){
           v = link.width,
           d = link.distance,
           g = link.color;
-          // console.log(i);
+          console.log(s);
       nodes.push(i);
       links.push({source: s, target: i}, {source: i, target: t});
       bilinks.push([s, i, t, v, d, g]);
     });
 
-    //console.log(bilinks[0]);
+    console.log("length:"+bilinks.length);
 
     var link = svg.selectAll(".link")
       .data(bilinks)
@@ -224,10 +229,10 @@ function setTopology(JsonFileName = "format.json"){
       svg.style("transform-origin", x+"% "+y+"% 0");
       svg.attr("transform",d3.event.transform);
       svg.style('transform', 'scale(' + d3.event.transform.k + ')');
+      // console.log(d3.event.transform.k);
+      d3.select("#scale").text("缩放比例：" + parseInt(d3.event.transform.k*100)+"%");
     }
 
-
-    
 
 
     //>
@@ -299,9 +304,9 @@ function setTopology(JsonFileName = "format.json"){
       var key =  e.which;
       console.log(key);
       if(key == 40){//down
-        //clear svg
         var newFileName;
         console.log(JsonFileName);
+        //clear svg
         d3.selectAll("svg > *").remove();
         if (JsonFileName == "format.json") {
           newFileName = "format_3.json"
@@ -316,7 +321,10 @@ function setTopology(JsonFileName = "format.json"){
             newFileName = "format_"+num+".json";
           }
         }
-        setTopology(newFileName);
+        host_name = window.location.host;   // localhost:81
+        path_name = window.location.pathname; // /index.htm
+        window.location.href="http://"+host_name+path_name+"?"+newFileName;
+        // setTopology(newFileName);
       }
       else if(key == 38){//up
         d3.selectAll("svg > *").remove();
@@ -335,10 +343,13 @@ function setTopology(JsonFileName = "format.json"){
             newFileName = "format.json";
           }
         }
-      setTopology(newFileName);
+      host_name = window.location.host;   // localhost:81
+      path_name = window.location.pathname; // /index.htm
+      window.location.href="http://"+host_name+path_name+"?"+newFileName;
       }
   });
 }
+
 
 </script>
 
