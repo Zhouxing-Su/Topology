@@ -21,4 +21,5 @@
     - 增加保存节点坐标功能，由于js无法保存文件，因而将数据写成json格式打印到控制台
     
   ### 当前效果图如下：
-  ![](http://wx3.sinaimg.cn/large/006k2kyGgy1fhxmb13w6kg31gv0qakjv.gif)
+  ![img](http://wx3.sinaimg.cn/large/006k2kyGgy1fhxmb13w6kg31gv0qakjv.gif)<br />
+  若是显示不了[点我](http://wx3.sinaimg.cn/large/006k2kyGgy1fhxmb13w6kg31gv0qakjv.gif)
