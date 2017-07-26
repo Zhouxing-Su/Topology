@@ -19,3 +19,6 @@
     - 更改修改节点、边属性功能(将表格改为滑动条)
     - 增加修改Simulation属性功能(包括strength、distance  、iterations)，同样是用滑动条实现改变
     - 增加保存节点坐标功能，由于js无法保存文件，因而将数据写成json格式打印到控制台
+    
+  ### 当前效果图如下：
+  ![](http://wx3.sinaimg.cn/large/006k2kyGgy1fhxmb13w6kg31gv0qakjv.gif)
