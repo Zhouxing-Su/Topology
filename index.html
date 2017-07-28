@@ -103,7 +103,7 @@
       </label>
       <label title="change distance of Simulation'force">
         distance
-        <output id="link_distanceSliderOutput">30</output>
+        <output id="link_distanceSliderOutput">20</output>
         <input id="link_distanceSliderInput" type="range" min="10" max="100" value="30" step="1" oninput="d3.select('#link_distanceSliderOutput').text(value);">
       </label>
       <label title="change iterations of Simulation'force">
@@ -118,6 +118,7 @@
 
 <script src="js/d3.v4.min.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/FileSaver.min.js"></script>
 <script>
 
 function setTopology(){
@@ -134,7 +135,7 @@ function setTopology(){
   forceProperties = {
       link: {
           strength:1,
-          distance: 30,
+          distance: 20,
           iterations: 10
       }
     }
@@ -160,9 +161,8 @@ function setTopology(){
     //长度
     function linkDistance(d) {
       if (d.length == undefined) {
-        return 30;
-      }
-      else{
+        return 20;
+      } else {
         // console.log(d.length)
         return d.length;
       }
@@ -374,18 +374,12 @@ function setTopology(){
         simulation.stop();
       });
 
-    var text="";
     //另存为几何图
     d3.select("#saveAsXY")
       .on("click", function (){
-        nodes.forEach(function(v){
-          if(NodeNum>0){
-            text += '["label" : '+v.label+', "XY:"['+v.x+','+v.y+']],';
-          }
-          --NodeNum;
-        });
-        console.log("{"+text+"}");
-        alert("已打印到控制台！");
+        var text = JSON.stringify(nodes);
+        var file = new File([text], "coord.json", {type: "application/json;charset=utf-8"});
+        saveAs(file);
     });
 
 
