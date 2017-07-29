@@ -66,6 +66,7 @@
     <button id="showBtn">显示所有标签</button>
     <button id="stopBtn">停止迭代拓扑图</button>
     <button id="saveAsXY">另存为几何图</button>
+    <button id="saveAsPng">将svg另存为图片</button>
     <div class="force">
       <b>Node properties</b><br />
       <p><span>Node'ID: </span><span id="NID">0</span></p>
@@ -114,11 +115,12 @@
     </div>
   </div>
   
-  <svg width="1310" height="750"></svg>
+  <svg id="canvas" width="1310" height="750"></svg>
 
 <script src="js/d3.v4.min.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/FileSaver.min.js"></script>
+<script src="js/saveSvgAsPng.js"></script>
 <script>
 
 function setTopology(){
@@ -382,6 +384,11 @@ function setTopology(){
         saveAs(file);
     });
 
+    //另存为图片
+    d3.select("#saveAsPng")
+      .on("click", function (){
+        saveSvgAsPng(document.getElementById("canvas"), "svg.png", {backgroundColor: "white"});
+    });
 
     //>
     node.append("title")
