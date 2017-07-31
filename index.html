@@ -6,6 +6,7 @@
 <!--   <meta   http-equiv="Expires"   CONTENT="0">
   <meta   http-equiv="Cache-Control"   CONTENT="no-cache">
   <meta   http-equiv="Pragma"   CONTENT="no-cache"> -->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
   <style type="text/css" media="screen">
     *{
       padding: 0px;
@@ -53,69 +54,143 @@
       padding: 5px;
       margin: 5px 0;
     }
+	button{
+		position:relative;
+		margin-top:20px;
+		margin-bottom:60px;
+	}
+	output{
+		position:relative;
+		margin-top:-6px;
+	}
   </style>
 </head>
 <body onload="checkUrl()">
-  <div id="data">
-    <p id="vertix">节点数：</p>
-    <p id="edge">边数：</p>
-    <p id="scale">缩放比例：100%</p>
-    <button id="hideBtn">隐藏所有标签</button>
-    <button id="showBtn">显示所有标签</button>
-    <button id="stopBtn">停止迭代拓扑图</button>
-    <button id="saveAsXY">另存为几何图</button>
-    <button id="saveAsPng">将svg另存为图片</button>
-    <div class="force">
-      <b>Node properties</b><br />
-      <p><span>Node'ID: </span><span id="NID">0</span></p>
-      <label title="change node's color.">
-        color：
-        <output id="node_colorSliderOutput">1</output><br />
-        <input id="node_colorSliderInput" type="range" min="1" max="20" value="1" step="1" class="form-input" oninput="d3.select('#node_colorSliderOutput').text(value);">
-      </label><br />
-      <label title="change node's radius.">
-        radius：
-        <output id="node_radiusSliderOutput">1</output><br />
-        <input id="node_radiusSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#node_radiusSliderOutput').text(value);">
-      </label>
-    </div>
-    <div class="force">
-      <b>Link properties</b><br />
-      <p><span>Link'ID: </span><span id="LID">0</span></p>
-      <label title="change link's color.">
-        color：
-        <output id="link_colorSliderOutput">1</output><br />
-        <input id="link_colorSliderInput" type="range" min="1" max="20" value="1" step="1" class="form-input" oninput="d3.select('#link_colorSliderOutput').text(value);">
-      </label><br />
-      <label title="change link's width.">
-        width：
-        <output id="link_widthSliderOutput">1</output><br />
-        <input id="link_widthSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#link_widthSliderOutput').text(value);">
-      </label>
-    </div>
-    <div class="force">
-      <b>Simulation properties</b><br />
-      <label title="change strength of Simulation'force">
-        strength
-        <output id="link_strengthSliderOutput">1</output>
-        <input id="link_strengthSliderInput" type="range" min="0.3" max="1" value="1" step="0.1" oninput="d3.select('#link_strengthSliderOutput').text(value);">
-      </label>
-      <label title="change distance of Simulation'force">
-        distance
-        <output id="link_distanceSliderOutput">20</output>
-        <input id="link_distanceSliderInput" type="range" min="10" max="100" value="30" step="1" oninput="d3.select('#link_distanceSliderOutput').text(value);">
-      </label>
-      <label title="change iterations of Simulation'force">
-        iterations
-        <output id="link_iterationsSliderOutput">10</output>
-        <input id="link_iterationsSliderInput" type="range" min="10" max="50" value="10" step="1" oninput="d3.select('#link_iterationsSliderOutput').text(value);">
-      </label>
-    </div>
-  </div>
-  <svg id="canvas" width="1310" height="750"></svg>
-
+	<div class=container-fluid>
+		<div class = "rwo">
+			<div class=col-md-2 id="Gname">
+				<h1>可视化拓扑图</h1>
+			</div>
+			<div class=col-md-2 style="height:100px">
+				<button id="hideBtn" class="btn btn-primary btn-lg">隐藏所有标签</button>
+			</div>
+			<div class=col-md-2 style="height:100px">
+				<button id="showBtn" class="btn btn-primary btn-lg">显示所有标签</button>
+			</div>
+			<div class=col-md-2 style="height:100px">
+				<button id="stopBtn" class="btn btn-primary btn-lg">停止迭代拓扑图</button>
+			</div>
+			<div class=col-md-2 style="height:100px">
+				<button id="saveAsXY" class="btn btn-primary btn-lg">保存为Json文件</button>
+			</div>
+			<div class=col-md-2 style="height:100px">
+				<button id="saveAsPng" class="btn btn-primary btn-lg">将svg另存为图片</button>
+			</div>
+		</div>
+		<div class = "row" style="background-color:rgba(205, 202, 202, 0.2)">
+			<div class="col-md-2" id="menu">
+			  <div id="data">
+				<h3 id="vertix">节点数：</h3>
+				<h3 id="edge">边数：</h3>
+				<h3 id="scale">缩放比例：100%</h3>				
+				<div class="force">
+				  <div class="force">
+				  <h4>Simulation properties</h4><br />
+					  <label title="change strength of Simulation'force">
+					    <div class="row">
+							<div class="col-md-6">
+								<span>Strength:</span>
+							</div>
+							<div class="col-md-6">
+								<output id="link_strengthSliderOutput">1</output>
+							</div>
+						</div>
+						<input id="link_strengthSliderInput" type="range" min="0.3" max="1" value="1" step="0.1" oninput="d3.select('#link_strengthSliderOutput').text(value);">
+					  </label>
+					  <label title="change distance of Simulation'force">
+					    <div class="row">
+							<div class="col-md-6">
+								<span>Distance:</span>
+							</div>
+							<div class="col-md-6">
+								<output id="link_distanceSliderOutput">20</output>
+							</div>
+						</div>
+						<input id="link_distanceSliderInput" type="range" min="10" max="100" value="30" step="1" oninput="d3.select('#link_distanceSliderOutput').text(value);">
+					  </label>
+					  <label title="change iterations of Simulation'force">
+					    <div class="row">
+							<div class="col-md-6">
+								<span>Iterations:</span>
+							</div>
+							<div class="col-md-6">
+								<output id="link_iterationsSliderOutput">10</output>
+							</div>
+						</div>
+						<input id="link_iterationsSliderInput" type="range" min="10" max="50" value="10" step="1" oninput="d3.select('#link_iterationsSliderOutput').text(value);">
+					  </label>
+				  </div>
+				  <h4>Node properties</h4><br />
+				  <b style="font-size:15px"><span>Node'ID: </span><span id="NID">0</span></b>
+				  <label title="change node's color.">
+				    <div class="row">
+						<div class="col-md-6">
+							<span>Color:</span>
+						</div>
+						<div class="col-md-6">
+							<output id="node_colorSliderOutput">1</output>
+						</div>
+					</div>
+					<input id="node_colorSliderInput" type="range" min="1" max="20" value="1" step="1" class="form-input" oninput="d3.select('#node_colorSliderOutput').text(value);">
+				  </label><br />
+				  <label title="change node's radius.">
+				    <div class="row">
+						<div class="col-md-6">
+							<span>Radius:</span>
+						</div>
+						<div class="col-md-6">
+							<output id="node_radiusSliderOutput">1</output>
+						</div>
+					</div>
+					<input id="node_radiusSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#node_radiusSliderOutput').text(value);">
+				  </label>
+				</div>
+				<div class="force">
+				  <h4>Link properties</h4><br />
+				  <b style="font-size:15px"><span>Link'ID: </span><span id="LID">0</span></b>
+				  <label title="change link's color.">
+				    <div class="row">
+						<div class="col-md-6">
+							<span>Color:</span>
+						</div>
+						<div class="col-md-6">
+							<output id="link_colorSliderOutput">1</output>
+						</div>
+					</div>
+					<input id="link_colorSliderInput" type="range" min="1" max="20" value="1" step="1" class="form-input" oninput="d3.select('#link_colorSliderOutput').text(value);">
+				  </label><br />
+				  <label title="change link's width.">
+				    <div class="row">
+						<div class="col-md-6">
+							<span>Width:</span>
+						</div>
+						<div class="col-md-6">
+							<output id="link_widthSliderOutput">1</output>
+						</div>
+					</div>
+					<input id="link_widthSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#link_widthSliderOutput').text(value);">
+				  </label>
+				</div>
+			  </div>
+			</div>
+			<div class=col-md-10>
+			  <svg id="canvas" width="1310" height="750"></svg>
+			</div> 
+		</div>	  
+	</div>
 <script src="js/d3.v4.min.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <script src="js/FileSaver.min.js"></script>
 <script src="js/saveSvgAsPng.js"></script>
 <script>
@@ -157,6 +232,9 @@ var color1;
 //初始化拓扑图
 function initTopology(){
   svg = d3.select("svg"),
+  //使svg自适应铺满整个屏幕
+  svg.attr("width",$(window).width()-document.getElementById('menu').clientWidth*1.1),
+  svg.attr("height",$(window).height()-(document.getElementById('Gname').clientHeight)*1.6), 
       width = +svg.attr("width"),
       height = +svg.attr("height");
   color = d3.scaleOrdinal(d3.schemeCategory20);
@@ -424,7 +502,7 @@ function Simulation(){
       simulation.stop();
   });
 
-  //另存为几何图
+  //另存为json文件
   d3.select("#saveAsXY")
     .on("click", function (){
       var text = JSON.stringify(nodes);

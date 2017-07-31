@@ -5,6 +5,36 @@
 ## 使用方法:
 
     localhost:port[/index.html]?proj.json
+	
+	
+## 拓扑图界面内的操作方式和基本元素解释
+
+### 图中可进行的操作
+1. 当点击节点时会隐藏或者显示该节点的ID，同时在Node properties显示出该节点的信息
+2. 当点击边时会在Link properties显示出该边的信息
+3. 在图中可通过滚轮放大缩小图片
+
+### 按钮的使用
+1. 隐藏所有标签：即隐藏所有节点的信息
+2. 显示所有标签：即显示所有节点的信息
+3. 停止迭代拓扑图：停止拓扑图的迭代，再次点击继续迭代
+4. 保存为Json文件：将节点的信息保存到Json中
+5. 将svg另存为图片：将svg以图片的形式保存
+
+### Simulation properties
+1. Strength：节点间斥力的调节
+2. Distance：边长度的调节
+3. Iterations：迭代次数的调节
+
+### Note properties
+1. Node'ID：表示当前显示节点的ID
+2. Color：节点颜色的调节
+3. Radius：节点大小的调节
+
+### Link properties
+1. Link'ID：表示当前显示边的ID
+2. Color：边的颜色的调节
+3. Width：边的宽度的调节
 
 ## 修改日志：
 - 20170717增加了显示/隐藏节点标签功能。
@@ -33,7 +63,9 @@
     - 整理代码，将其按功能切分为若干部分
     - 设置边的id，使点击的时候在滑动条上显示边id
     - 设置边的透明度
-    
+- 20170731
+	- 利用bootstrap优化整个拓扑图的显示效果
+	- 整理README文档，解释页面内的具体使用方式
   ### 当前效果图如下：
   ![img](http://wx3.sinaimg.cn/large/006k2kyGgy1fhxmb13w6kg31gv0qakjv.gif)<br />
   若是显示不了[点我](http://wx3.sinaimg.cn/large/006k2kyGgy1fhxmb13w6kg31gv0qakjv.gif)
