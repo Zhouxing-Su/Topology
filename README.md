@@ -5,8 +5,8 @@
 ## 使用方法:
 
     localhost:port[/index.html]?proj.json
-	
-	
+    
+    
 ## 拓扑图界面内的操作方式和基本元素解释
 
 ### 图中可进行的操作
@@ -64,9 +64,9 @@
     - 设置边的id，使点击的时候在滑动条上显示边id
     - 设置边的透明度
 - 20170731
-	- 利用bootstrap优化整个拓扑图的显示效果
-	- 整理README文档，解释页面内的具体使用方式
-  ### 当前效果图如下：
-  ![img](http://wx3.sinaimg.cn/large/006k2kyGgy1fhxmb13w6kg31gv0qakjv.gif)<br />
-  若是显示不了[点我](http://wx3.sinaimg.cn/large/006k2kyGgy1fhxmb13w6kg31gv0qakjv.gif)
-
+    - 利用bootstrap优化整个拓扑图的显示效果
+    - 整理README文档，解释页面内的具体使用方式
+    
+ ### 当前效果图如下：
+![img](http://wx2.sinaimg.cn/large/006k2kyGgy1fi323jvgn2g31gw0qf1l4.gif)<br />
+ 若是显示不了[点我](http://wx2.sinaimg.cn/large/006k2kyGgy1fi323jvgn2g31gw0qf1l4.gif)
