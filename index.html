@@ -25,6 +25,7 @@
 
     .link {
       fill: none; /*线中间的填充颜色*/
+      /*stroke-dasharray: 10, 10; 虚线*/
       /*stroke: #bbb; 线的颜色*/
     }
 
@@ -78,6 +79,11 @@
         <output id="node_radiusSliderOutput">1</output><br />
         <input id="node_radiusSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#node_radiusSliderOutput').text(value);">
       </label>
+      <label title="change node's opacity.">
+        opacity：
+        <output id="node_opacitySliderOutput">0</output><br />
+        <input id="node_opacitySliderInput" type="range" min="0" max="1" value="0" step="0.1" oninput="d3.select('#node_opacitySliderOutput').text(value);">
+      </label>
     </div>
     <div class="force">
       <b>Link properties</b><br />
@@ -91,6 +97,11 @@
         width：
         <output id="link_widthSliderOutput">1</output><br />
         <input id="link_widthSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#link_widthSliderOutput').text(value);">
+      </label>
+      <label title="change link's opacity.">
+        opacity：
+        <output id="link_opacitySliderOutput">0</output><br />
+        <input id="link_opacitySliderInput" type="range" min="0" max="1" value="0" step="0.1" oninput="d3.select('#link_opacitySliderOutput').text(value);">
       </label>
     </div>
     <div class="force">
@@ -230,6 +241,7 @@ function Display(){
 
  node.append("circle")  
     .attr("r", function(d) { return d.radius; })
+    .attr("opacity", function(d) { return d.opacity; })//设置透明度
     .style("fill",function(d) { return color(d.color); });
   //显示节点标签
   //点是网关颜色为红色
@@ -288,6 +300,8 @@ function Simulation(){
       $("#node_colorSliderInput").val(d.color);
       $('#node_radiusSliderOutput').val(d.radius);
       $("#node_radiusSliderInput").val(d.radius);
+      $('#node_opacitySliderOutput').val(d.opacity);
+      $("#node_opacitySliderInput").val(d.opacity);
       // console.log(global_node);
       if ($(this).next().is(":hidden")) {
         $(this).next().show();
@@ -317,7 +331,7 @@ function Simulation(){
 
     function showAllLabels(){
       node.selectAll("text").each(function(d){
-        console.log(d['id']);
+        // console.log(d['id']);
         $(this).show();
       });
     }
@@ -353,7 +367,18 @@ function Simulation(){
           global_node
             .attr("r", function() { return $("#node_radiusSliderOutput").val(); });
         }
-    }); 
+    });
+    //点透明度
+    d3.select("#node_opacitySliderInput")
+      .on("change", function (){
+        if (d3.select('#NID').text() != 0) {
+          global_node
+            .attr("opacity", function() { return $("#node_opacitySliderOutput").val(); });
+          // cur_g = node.select(function() { return global_node.parentNode; });
+          // console.log(cur_g);
+        }
+    });
+    node_opacitySliderInput
     //边的颜色
     d3.select("#link_colorSliderInput")
       .on("change", function (){
@@ -370,16 +395,26 @@ function Simulation(){
             .attr("stroke-width", function() { return $("#link_widthSliderOutput").val(); });
         }
     });
+    //边的透明度
+    d3.select("#link_opacitySliderInput")
+      .on("change", function (){
+        if (global_link) {
+          global_link
+            .attr("opacity", function() { return $("#link_opacitySliderOutput").val(); });
+        }
+    });
 
   svg.selectAll(".link")
       .on("click", function (d){
-        // console.log(d);
+        console.log(d);
         global_link = d3.select(this);
         d3.select('#LID').text(d[7]);
         $('#link_colorSliderOutput').val(d[5]);
         $("#link_colorSliderInput").val(d[5]);
         $('#link_widthSliderOutput').val(d[3]);
         $("#link_widthSliderInput").val(d[3]);
+        $('#link_opacitySliderOutput').val(d[6]);
+        $("#link_opacitySliderInput").val(d[6]);
         // console.log(global_link);
   });
     

@@ -66,6 +66,8 @@
 - 20170731
     - 利用bootstrap优化整个拓扑图的显示效果
     - 整理README文档，解释页面内的具体使用方式
+- 20170801
+    - 增加修改点/边透明度的功能
     
  ### 当前效果图如下：
 ![img](http://wx2.sinaimg.cn/large/006k2kyGgy1fi323jvgn2g31gw0qf1l4.gif)<br />
