@@ -2,6 +2,10 @@
 使用了[D3v4.js](https://github.com/d3/d3)库
 在给出的[Curved Links](https://bl.ocks.org/mbostock/4600693)例子上修改、增加功能。
 
+## 使用到的js库
+- d3-v4
+- jQuery
+
 ## 使用方法:
 
     localhost:port[/index.html]?proj.json
@@ -69,6 +73,6 @@
 - 20170801
     - 增加修改点/边透明度的功能
     
- ### 当前效果图如下：
+### 当前效果图如下：
 ![img](http://wx2.sinaimg.cn/large/006k2kyGgy1fi323jvgn2g31gw0qf1l4.gif)<br />
- 若是显示不了[点我](http://wx2.sinaimg.cn/large/006k2kyGgy1fi323jvgn2g31gw0qf1l4.gif)
+若是显示不了[点我](http://wx2.sinaimg.cn/large/006k2kyGgy1fi323jvgn2g31gw0qf1l4.gif)
