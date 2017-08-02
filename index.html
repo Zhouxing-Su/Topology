@@ -520,8 +520,8 @@ $(document).keydown(function(e){
 });
 
 
-/*假设一共有四个json文件可供切换
-  proj.json、proj_1.json、proj_2.json、proj_3.json
+/*用数字来命名文件
+0,1,2,3,4.
 */
 $(document).keyup(function(e){
     var key =  e.which;
@@ -530,17 +530,17 @@ $(document).keyup(function(e){
       var newFileName;
       //clear svg
       d3.selectAll("svg > *").remove();
-      if (JsonFileName == "proj.json") {
-        newFileName = "proj_3.json"
+      if (JsonFileName == "0.json") {
+        newFileName = "0.json"
       }
       else{
-        var num = parseInt(JsonFileName.match(/\_(\d)/)[1])-1;
+        var num = parseInt(JsonFileName.match(/(\d)/)[1])-1;
         // console.log("page: "+num);
         if(num == 0){
-          newFileName = "proj.json";
+          newFileName = "0.json";
         }
         else{
-          newFileName = "proj_"+num+".json";
+          newFileName = num+".json";
         }
       }
       host_name = window.location.host;   // localhost:81
@@ -552,18 +552,13 @@ $(document).keyup(function(e){
       d3.selectAll("svg > *").remove();
       var newFileName;
       // console.log(JsonFileName);
-      if (JsonFileName == "proj.json") {
-        newFileName = "proj_1.json"
+      if (JsonFileName == "0.json") {
+        newFileName = "1.json"
       }
       else{
-        var num = parseInt(JsonFileName.match(/\_(\d)/)[1])+1;
-        // console.log("page: "+num);
-        if (num < 4) {
-          newFileName = "proj_"+num+".json";
-        }
-        else{
-          newFileName = "proj.json";
-        }
+        var num = parseInt(JsonFileName.match(/(\d)/)[1])+1;
+        //console.log(num);
+          newFileName = num+".json";
       }
     host_name = window.location.host;   // localhost:81
     path_name = window.location.pathname; // /index.htm

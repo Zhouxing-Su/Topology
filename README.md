@@ -8,7 +8,7 @@
 
 ## 使用方法:
 
-    localhost:port[/index.html]?proj.json
+    localhost:port[/index.html]?0.json
     
     
 ## 拓扑图界面内的操作方式和基本元素解释
@@ -72,7 +72,8 @@
     - 整理README文档，解释页面内的具体使用方式
 - 20170801
     - 增加修改点/边透明度的功能
-    
+- 20170802
+	- 修改命名方式
 ### 当前效果图如下：
 ![img](http://wx2.sinaimg.cn/large/006k2kyGgy1fi323jvgn2g31gw0qf1l4.gif)<br />
 若是显示不了[点我](http://wx2.sinaimg.cn/large/006k2kyGgy1fi323jvgn2g31gw0qf1l4.gif)
