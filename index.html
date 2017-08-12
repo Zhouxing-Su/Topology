@@ -35,6 +35,7 @@
       width: 200px;
       margin: 0 auto;
     }
+
     svg{
       background: rgba(205, 202, 202, 0.2);
       z-index:-1;
@@ -123,7 +124,36 @@
       </label>
     </div>
   </div>
-  <svg id="canvas" width="1310" height="750"></svg>
+  <svg id="canvas" width="1100" height="750"></svg>
+  
+  <div id="data">
+    <div class="force">
+      <b>forceX properties</b><br />
+      <label>
+        strength
+        <output id="forceX_StrengthSliderOutput">0.1</output>
+        <input id="forceX_StrengthSliderInput" type="range" min="0" max="1" value="0.1" step="0.01" oninput="d3.select('#forceX_StrengthSliderOutput').text(value);">
+      </label><br />
+      <label title="The X location that the force will push the nodes to (NOTE: This demo multiplies by the svg width)">
+        x
+        <output id="forceX_XSliderOutput">0.5</output><br />
+        <input id="forceX_XSliderInput" type="range" min="0" max="1" value="0.5" step="0.01" oninput="d3.select('#forceX_XSliderOutput').text(value);">
+      </label>
+    </div>
+    <div class="force">
+      <b>forceY properties</b><br />
+      <label>
+        strength
+        <output id="forceY_StrengthSliderOutput">0.1</output>
+        <input id="forceY_StrengthSliderInput" type="range" min="0" max="1" value="0.1" step="0.01" oninput="d3.select('#forceY_StrengthSliderOutput').text(value);">
+      </label><br />
+      <label title="The Y location that the force will push the nodes to (NOTE: This demo multiplies by the svg width)">
+        y
+        <output id="forceY_YSliderOutput">0.5</output><br />
+        <input id="forceY_YSliderInput" type="range" min="0" max="1" value="0.5" step="0.01" oninput="d3.select('#forceY_YSliderOutput').text(value);">
+      </label>
+    </div>
+  </div>
 
 <script src="js/d3.v4.min.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
@@ -146,6 +176,14 @@ forceProperties = {
     strength:1,
     distance: 20,
     iterations: 10
+  },
+  forceX: {
+    strength: 0.1,
+    x: 0.5
+  },
+  forceY: {
+      strength: 0.1,
+      y: 0.5
   }
 }
 
@@ -431,6 +469,10 @@ function Simulation(){
         .iterations(forceProperties.link.iterations)
         .links(links);
 
+    simulation.force("x", d3.forceX().strength(forceProperties.forceX.strength).x(width * forceProperties.forceX.x));
+
+    simulation.force("y", d3.forceY().strength(forceProperties.forceY.strength).y(height * forceProperties.forceY.y));
+
     // updates ignored until this is run
     // restarts the simulation (important if simulation has already slowed down)
     simulation.alpha(1).restart();
@@ -456,6 +498,36 @@ function Simulation(){
         // console.log(forceProperties);
         updateForces();
     });
+  //*修改forceX属性*/
+  //strength
+  d3.select("#forceX_StrengthSliderInput")
+    .on("change", function (){
+      forceProperties.forceX.strength=$("#forceX_StrengthSliderOutput").val();
+      // console.log(forceProperties);
+      updateForces();
+  });
+  //x
+  d3.select("#forceX_XSliderInput")
+  .on("change", function (){
+    forceProperties.forceX.x=$("#forceX_XSliderOutput").val();
+    // console.log(forceProperties);
+    updateForces();
+  });
+  //*修改forceY属性*/
+  //strength
+  d3.select("#forceY_StrengthSliderInput")
+    .on("change", function (){
+      forceProperties.forceY.strength=$("#forceY_StrengthSliderOutput").val();
+      // console.log(forceProperties);
+      updateForces();
+  });
+  //y
+  d3.select("#forceY_YSliderInput")
+  .on("change", function (){
+    forceProperties.forceY.y=$("#forceY_YSliderOutput").val();
+    // console.log(forceProperties);
+    updateForces();
+  });
   //停止迭代
   d3.select("#stopBtn")
     .on("click", function (){
