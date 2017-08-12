@@ -75,6 +75,8 @@
 - 20170802
 	- 修改命名方式
 	- 增加固定点的功能，当鼠标左键点击点同时按住f键，进入固定点的模式，再次点击左键同时按住非f键退出
-### 当前效果图如下：
-![img](http://wx2.sinaimg.cn/large/006k2kyGgy1fi323jvgn2g31gw0qf1l4.gif)<br />
-若是显示不了[点我](http://wx2.sinaimg.cn/large/006k2kyGgy1fi323jvgn2g31gw0qf1l4.gif)
+- 20170812
+    - 增加修改forceX和forceY功能
+
+### 当前效果图可访问[网页](https://lewistian.github.io/show/?0.json)
+
