@@ -1,61 +1,61 @@
 {
     "links": [
         {
-            "length": 2,
+            "length": 10,
             "color": 20,
             "source": "rp.1001101",
-            "opacity": 0.6,
+            "opacity": 1,
             "style": 0,
             "width": 2,
             "id": 0,
             "target": "rp.1001102"
         },
         {
-            "length": 2,
+            "length": 10,
             "color": 10,
             "source": "sp.1001001",
-            "opacity": 0.8,
-            "style": 0,
+            "opacity": 1,
+            "style": 1,
             "width": 2,
             "id": 1,
             "target": "sp.1001002"
         },
         {
-            "length": 4,
+            "length": 15,
             "color": 1,
             "source": "sp.1001002",
-            "opacity": 0.7,
-            "style": 0,
+            "opacity": 1,
+            "style": 2,
             "width": 2,
             "id": 2,
             "target": "sp.1001003"
         },
         {
-            "length": 2,
+            "length": 20,
             "color": 1,
             "source": "sp.1001003",
             "opacity": 0.9,
-            "style": 0,
+            "style": 3,
             "width": 2,
             "id": 3,
             "target": "sp.1001004"
         },
         {
-            "length": 4,
+            "length": 25,
             "color": 8,
             "source": "sp.1001001",
-            "opacity": 0.4,
-            "style": 0,
+            "opacity": 1,
+            "style": 4,
             "width": 2,
             "id": 4,
             "target": "sp.1001004"
         },
         {
-            "length": 4,
+            "length": 25,
             "color": 15,
             "source": "sp.1001001",
-            "opacity": 0.5,
-            "style": 0,
+            "opacity": 1,
+            "style": 5,
             "width": 3,
             "id": 5,
             "target": "rp.1001101"
@@ -101,7 +101,7 @@
             "target": "rp.1001102"
         },
         {
-            "length": 3,
+            "length": 20,
             "color": 7,
             "source": "sp.1001002",
             "opacity": 0.7,
@@ -114,8 +114,8 @@
             "length": 3,
             "color": 16,
             "source": "sp.1001003",
-            "opacity": 0.4,
-            "style": 0,
+            "opacity": 0.9,
+            "style": 1,
             "width": 1,
             "id": 11,
             "target": "rp.1001102"
@@ -524,9 +524,9 @@
             "length": 7,
             "color": 14,
             "source": "sp.1001002",
-            "opacity": 0.6,
-            "style": 0,
-            "width": 1,
+            "opacity": 0.9,
+            "style": 3,
+            "width": 3,
             "id": 325,
             "target": "sp.1002004"
         },
@@ -545,7 +545,7 @@
             "color": 18,
             "source": "sp.1002003",
             "opacity": 0.9,
-            "style": 0,
+            "style": 2,
             "width": 2,
             "id": 328,
             "target": "sp.2002001"
@@ -555,8 +555,8 @@
             "color": 18,
             "source": "sp.2001002",
             "opacity": 0.9,
-            "style": 0,
-            "width": 1,
+            "style": 4,
+            "width": 4,
             "id": 333,
             "target": "sp.2002004"
         }
