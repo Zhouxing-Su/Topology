@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Topology</title>
   <meta charset="utf-8">
-<!--   <meta   http-equiv="Expires"   CONTENT="0">
+  <!--   <meta   http-equiv="Expires"   CONTENT="0">
   <meta   http-equiv="Cache-Control"   CONTENT="no-cache">
   <meta   http-equiv="Pragma"   CONTENT="no-cache"> -->
   <style type="text/css" media="screen">
-    *{
+    * {
       padding: 0px;
       margin: 0px;
     }
 
     .node {
-      stroke: none; /*点的外圈颜色*/
+      stroke: none;
+      /*点的外圈颜色*/
       stroke-width: 0px;
     }
-    
+
     g circle {
       stroke: none;
       pointer-events: all;
@@ -24,624 +26,649 @@
     }
 
     .link {
-      fill: none; /*线中间的填充颜色*/
+      fill: none;
+      /*线中间的填充颜色*/
       /*stroke-dasharray: 10, 10; 虚线*/
       /*stroke: #bbb; 线的颜色*/
     }
 
-    #data{
+    #data {
       display: inline-block;
-      vertical-align:top;
+      vertical-align: top;
       width: 200px;
       margin: 0 auto;
     }
 
-    svg{
+    svg {
       background: rgba(205, 202, 202, 0.2);
-      z-index:-1;
+      z-index: -1;
       /*pointer-events: none;*/
     }
-  
+
     svg text {
       /*fill: black;*/
       font: 15px sans-serif;
       text-anchor: start;
-      cursor:default;
+      cursor: default;
     }
 
     .force {
-      background-color:#eee;
+      background-color: #eee;
       border-radius: 3px;
       padding: 5px;
       margin: 5px 0;
     }
   </style>
 </head>
+
 <body onload="checkUrl()">
-  <div id="data">
-    <p id="vertix">节点数：</p>
-    <p id="edge">边数：</p>
-    <p id="scale">缩放比例：100%</p>
-    <button id="hideBtn">隐藏所有标签</button>
-    <button id="showBtn">显示所有标签</button>
-    <button id="stopBtn">停止迭代拓扑图</button>
-    <button id="saveAsXY">另存为几何图</button>
-    <button id="saveAsPng">将svg另存为图片</button>
-    <div class="force">
-      <b>Node properties</b><br />
-      <p><span>Node'ID: </span><span id="NID">0</span></p>
-      <label title="change node's color.">
-        color：
-        <output id="node_colorSliderOutput">1</output><br />
-        <input id="node_colorSliderInput" type="range" min="1" max="20" value="1" step="1" class="form-input" oninput="d3.select('#node_colorSliderOutput').text(value);">
-      </label><br />
-      <label title="change node's radius.">
-        radius：
-        <output id="node_radiusSliderOutput">1</output><br />
-        <input id="node_radiusSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#node_radiusSliderOutput').text(value);">
-      </label>
-      <label title="change node's opacity.">
-        opacity：
-        <output id="node_opacitySliderOutput">0</output><br />
-        <input id="node_opacitySliderInput" type="range" min="0" max="1" value="0" step="0.1" oninput="d3.select('#node_opacitySliderOutput').text(value);">
-      </label>
-    </div>
-    <div class="force">
-      <b>Link properties</b><br />
-      <p><span>Link'ID: </span><span id="LID">0</span></p>
-      <label title="change link's color.">
-        color：
-        <output id="link_colorSliderOutput">1</output><br />
-        <input id="link_colorSliderInput" type="range" min="1" max="20" value="1" step="1" class="form-input" oninput="d3.select('#link_colorSliderOutput').text(value);">
-      </label><br />
-      <label title="change link's width.">
-        width：
-        <output id="link_widthSliderOutput">1</output><br />
-        <input id="link_widthSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#link_widthSliderOutput').text(value);">
-      </label>
-      <label title="change link's opacity.">
-        opacity：
-        <output id="link_opacitySliderOutput">0</output><br />
-        <input id="link_opacitySliderInput" type="range" min="0" max="1" value="0" step="0.1" oninput="d3.select('#link_opacitySliderOutput').text(value);">
-      </label>
-    </div>
-    <div class="force">
-      <b>Simulation properties</b><br />
-      <label title="change strength of Simulation'force">
-        strength
-        <output id="link_strengthSliderOutput">1</output>
-        <input id="link_strengthSliderInput" type="range" min="0.3" max="1" value="1" step="0.1" oninput="d3.select('#link_strengthSliderOutput').text(value);">
-      </label>
-      <label title="change distance of Simulation'force">
-        distance
-        <output id="link_distanceSliderOutput">20</output>
-        <input id="link_distanceSliderInput" type="range" min="10" max="100" value="30" step="1" oninput="d3.select('#link_distanceSliderOutput').text(value);">
-      </label>
-      <label title="change iterations of Simulation'force">
-        iterations
-        <output id="link_iterationsSliderOutput">10</output>
-        <input id="link_iterationsSliderInput" type="range" min="10" max="50" value="10" step="1" oninput="d3.select('#link_iterationsSliderOutput').text(value);">
-      </label>
-    </div>
-  </div>
-  <svg id="canvas" width="1100" height="750"></svg>
-  
-  <div id="data">
-    <div class="force">
-      <b>forceX properties</b><br />
-      <label>
-        strength
-        <output id="forceX_StrengthSliderOutput">0.1</output>
-        <input id="forceX_StrengthSliderInput" type="range" min="0" max="1" value="0.1" step="0.01" oninput="d3.select('#forceX_StrengthSliderOutput').text(value);">
-      </label><br />
-      <label title="The X location that the force will push the nodes to (NOTE: This demo multiplies by the svg width)">
-        x
-        <output id="forceX_XSliderOutput">0.5</output><br />
-        <input id="forceX_XSliderInput" type="range" min="0" max="1" value="0.5" step="0.01" oninput="d3.select('#forceX_XSliderOutput').text(value);">
-      </label>
-    </div>
-    <div class="force">
-      <b>forceY properties</b><br />
-      <label>
-        strength
-        <output id="forceY_StrengthSliderOutput">0.1</output>
-        <input id="forceY_StrengthSliderInput" type="range" min="0" max="1" value="0.1" step="0.01" oninput="d3.select('#forceY_StrengthSliderOutput').text(value);">
-      </label><br />
-      <label title="The Y location that the force will push the nodes to (NOTE: This demo multiplies by the svg width)">
-        y
-        <output id="forceY_YSliderOutput">0.5</output><br />
-        <input id="forceY_YSliderInput" type="range" min="0" max="1" value="0.5" step="0.01" oninput="d3.select('#forceY_YSliderOutput').text(value);">
-      </label>
-    </div>
-  </div>
+  <table width="100%">
+    <tr>
+      <td>
+        <div id="data">
+          <p id="vertix">节点数：</p>
+          <p id="edge">边数：</p>
+          <p id="scale">缩放比例：100%</p>
+          <button id="toggleBtn">标签显隐</button>
+          <button id="saveAsPng">导出图片</button>
+          <button id="showHelp">显示帮助</button>
+          <div class="force">
+            <b>Node properties</b><br />
+            <p><span>Node'ID: </span><span id="NID">0</span></p>
+            <label title="change node's color.">
+                color：
+                <output id="node_colorSliderOutput">1</output><br />
+                <input id="node_colorSliderInput" type="range" min="1" max="20" value="1" step="1" class="form-input" oninput="d3.select('#node_colorSliderOutput').text(value);">
+              </label><br />
+            <label title="change node's radius.">
+                radius：
+                <output id="node_radiusSliderOutput">1</output><br />
+                <input id="node_radiusSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#node_radiusSliderOutput').text(value);">
+              </label>
+            <label title="change node's opacity.">
+                opacity：
+                <output id="node_opacitySliderOutput">0</output><br />
+                <input id="node_opacitySliderInput" type="range" min="0" max="1" value="0" step="0.1" oninput="d3.select('#node_opacitySliderOutput').text(value);">
+              </label>
+          </div>
+          <div class="force">
+            <b>Link properties</b><br />
+            <p><span>Link'ID: </span><span id="LID">0</span></p>
+            <label title="change link's color.">
+                color：
+                <output id="link_colorSliderOutput">1</output><br />
+                <input id="link_colorSliderInput" type="range" min="1" max="20" value="1" step="1" class="form-input" oninput="d3.select('#link_colorSliderOutput').text(value);">
+              </label><br />
+            <label title="change link's width.">
+                width：
+                <output id="link_widthSliderOutput">1</output><br />
+                <input id="link_widthSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#link_widthSliderOutput').text(value);">
+              </label>
+            <label title="change link's opacity.">
+                opacity：
+                <output id="link_opacitySliderOutput">0</output><br />
+                <input id="link_opacitySliderInput" type="range" min="0" max="1" value="0" step="0.1" oninput="d3.select('#link_opacitySliderOutput').text(value);">
+              </label>
+          </div>
 
-<script src="js/d3.v4.min.js"></script>
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/FileSaver.min.js"></script>
-<script src="js/saveSvgAsPng.js"></script>
-<script>
-//按键值
-var key;
-//文件名
-var JsonFileName;
-//全局点
-var global_node;
-//全局边
-var global_link = null;
-//节点数
-var NodeNum;
-//forces的参数
-forceProperties = {
-  link: {
-    strength:1,
-    distance: 20,
-    iterations: 10
-  },
-  forceX: {
-    strength: 0.1,
-    x: 0.5
-  },
-  forceY: {
-      strength: 0.1,
-      y: 0.5
-  }
-}
+          <div class="force">
+            <b>Simulation properties</b><br />
+            <label title="change strength of Simulation'force">
+                strength
+                <output id="link_strengthSliderOutput">1</output>
+                <input id="link_strengthSliderInput" type="range" min="0.3" max="1" value="1" step="0.1" oninput="d3.select('#link_strengthSliderOutput').text(value);">
+              </label>
+            <label title="change distance of Simulation'force">
+                log10(distance)
+                <output id="link_distanceSliderOutput">0</output>
+                <input id="link_distanceSliderInput" type="range" min="-1" max="1" value="0" step="0.1" oninput="d3.select('#link_distanceSliderOutput').text(value);">
+              </label>
+            <label title="change iterations of Simulation'force">
+                iterations
+                <output id="link_iterationsSliderOutput">20</output>
+                <input id="link_iterationsSliderInput" type="range" min="10" max="50" value="20" step="1" oninput="d3.select('#link_iterationsSliderOutput').text(value);">
+              </label>
+          </div>
 
-//检查url中是否包含json文件
-function checkUrl(){
-  JsonFileName = window.location.search.substring(1);
-  if (!JsonFileName) {
-    alert("Error：未加载JSON文件！");
-  }
-  else{
-    initTopology();
-  }
-}
+          <div class="force">
+            <b>forceX properties</b><br />
+            <label>
+                strength
+                <output id="forceX_StrengthSliderOutput">0.4</output>
+                <input id="forceX_StrengthSliderInput" type="range" min="0" max="1" value="0.4" step="0.01" oninput="d3.select('#forceX_StrengthSliderOutput').text(value);">
+              </label><br />
+            <label title="The X location that the force will push the nodes to (NOTE: This demo multiplies by the svg width)">
+                x
+                <output id="forceX_XSliderOutput">0.5</output><br />
+                <input id="forceX_XSliderInput" type="range" min="0" max="1" value="0.5" step="0.01" oninput="d3.select('#forceX_XSliderOutput').text(value);">
+              </label>
+          </div>
+          <div class="force">
+            <b>forceY properties</b><br />
+            <label>
+                strength
+                <output id="forceY_StrengthSliderOutput">0.4</output>
+                <input id="forceY_StrengthSliderInput" type="range" min="0" max="1" value="0.4" step="0.01" oninput="d3.select('#forceY_StrengthSliderOutput').text(value);">
+              </label><br />
+            <label title="The Y location that the force will push the nodes to (NOTE: This demo multiplies by the svg width)">
+                y
+                <output id="forceY_YSliderOutput">0.5</output><br />
+                <input id="forceY_YSliderInput" type="range" min="0" max="1" value="0.5" step="0.01" oninput="d3.select('#forceY_YSliderOutput').text(value);">
+              </label>
+          </div>
+        </div>
+      </td>
+      <td>
+        <svg id="canvas" width="1100" height="700"></svg>
+      </td>
+    </tr>
+  </table>
 
-//获取svg对象
-var svg;
-//边的颜色映射
-var color;
-//点的颜色映射
-var color1;
+  <script src="js/d3.v4.min.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/FileSaver.min.js"></script>
+  <script src="js/saveSvgAsPng.js"></script>
+  <script>
+    // 切换日志输出
+    // var tvlog = console.log;
+    var tvlog = function () { };
 
-//初始化拓扑图
-function initTopology(){
-  svg = d3.select("svg"),
-      width = +svg.attr("width"),
-      height = +svg.attr("height");
-  color = d3.scaleOrdinal(d3.schemeCategory20);
-  color1 = d3.scaleOrdinal(d3.schemeCategory20c);
-  readData();
-}
+    //文件名
+    var jsonFileName;
+    //全局点
+    var globalNode;
+    //全局边
+    var globalLink = null;
+    //forces的参数
+    forceProperties = {
+      link: {
+        strength: 1,
+        distance: 1,
+        iterations: 20
+      },
+      forceX: {
+        strength: 0.4,
+        x: 0.5
+      },
+      forceY: {
+        strength: 0.4,
+        y: 0.5
+      }
+    }
 
-//用于缩放的容器
-var container;
-//节点
-var nodes;
-//边
-var links;
-//边的数据
-var bilinks=[];
+    //检查url中是否包含json文件
+    function checkUrl() {
+      jsonFileName = window.location.search.substring(1);
+      if (!jsonFileName) {
+        jsonFileName = "0.json";
+        // window.location.search = jsonFileName;
+      }
+      initTopology();
+    }
 
-//读取json文件
-function readData(){
-  //读取json文件
-  d3.json("json/"+JsonFileName, function(error, graph) {
-    if (error) throw error;
+    //获取svg对象
+    var svg;
+    //点的颜色映射
+    var nodeColorMap;
+    //边的颜色映射
+    var linkColorMap;
 
-    container = svg.append("g");
-    nodes = graph.nodes;
-    nodeById = d3.map(nodes, function(d) { return d.label; });
-    links = graph.links;
-    //显示节点数和边数
-    NodeNum = nodes.length;
-    d3.select("#vertix").text("节点数：" + NodeNum);
-    d3.select("#edge").text("边数：" + links.length);
-    links.forEach(function(link) {
-      var s = link.source = nodeById.get(link.source),
-          t = link.target = nodeById.get(link.target),
-          i = {}, // intermediate node
-          v = link.width,
-          d = link.distance,
-          g = link.color,
-          o = link.opacity,//透明度
-          x = link.id;
-      nodes.push(i);
-      links.push({source: s, target: i}, {source: i, target: t});
-      bilinks.push([s, i, t, v, d, g, o, x]);
-    });
-  Display();
-  Simulation();
-  });
-}
-//所有点集合
-var node;
-//所有边集合
-var link;
+    //初始化拓扑图
+    function initTopology() {
+      svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height");
+      nodeColorMap = d3.scaleOrdinal(d3.schemeCategory20);
+      linkColorMap = d3.scaleOrdinal(d3.schemeCategory20c);
+      readData();
+    }
 
-//显示画布内容
-function Display(){
-  link = container.selectAll(".link")
-    .data(bilinks)
-    .enter().append("path")
-      .attr("class", "link")
-      .attr("stroke-width", function(d) { return d[3]; })
-      .attr("stroke", function(d) {  return color1(d[5]); })
-      .attr("opacity", function(d) { return d[6]; });//设置透明度
+    //用于缩放的容器
+    var container;
+    //节点
+    var nodes;
+    //边
+    var links;
+    //边的数据
+    var bilinks = [];
 
-  node = container.selectAll(".node")
-    .data(nodes.filter(function(d) { return d.label; }))
-    .enter().append("g")
-      .attr("class", "node")
-      .call(d3.drag()  /*鼠标拖拽 对应Fl()函数*/
+    function getLabel(d) { return d.label; }
+    function getLabelColor(d) { return (d.labelcolor || "black"); }
+    function getDist(d) { return (d.length || 1) * Math.pow(10, forceProperties.link.distance); }
+
+    //读取json文件
+    function readData() {
+      //读取json文件
+      d3.json("json/" + jsonFileName, function (error, graph) {
+        if (error) throw error;
+
+        container = svg.append("g");
+        nodes = graph.nodes;
+        nodeById = d3.map(nodes, function (d) { return d.label; });
+        links = graph.links;
+        //显示节点数和边数
+        d3.select("#vertix").text("节点数：" + nodes.length);
+        d3.select("#edge").text("边数：" + links.length);
+        links.forEach(function (link) {
+          var s = link.source = nodeById.get(link.source),
+            t = link.target = nodeById.get(link.target),
+            i = {}, // intermediate node
+            v = link.width,
+            d = link.distance,
+            g = link.color,
+            o = link.opacity,//透明度
+            x = link.id;
+          nodes.push(i);
+          links.push({ source: s, target: i }, { source: i, target: t });
+          bilinks.push([s, i, t, v, d, g, o, x]);
+        });
+        Display();
+        Simulation();
+      });
+    }
+
+    //所有点集合
+    var node;
+    //所有边集合
+    var link;
+
+    //是否固定被拖拽的点
+    var fixMode = true;
+
+    var simulation;
+
+    //切换所有标签显示隐藏
+    var showAllLabels = false;
+
+    function toggleAllLabels() {
+      node.selectAll("text").each(function (d) {
+        tvlog(d['id']);
+        showAllLabels ? $(this).show() : $(this).hide();
+      });
+      showAllLabels = !showAllLabels;
+    }
+
+    //保存坐标
+    function saveCoord() {
+      var text = JSON.stringify(nodes);
+      var file = new File([text], "coord.json", { type: "application/json;charset=utf-8" });
+      saveAs(file);
+    }
+
+    //导出图片
+    function exportFigure() {
+      saveSvgAsPng(document.getElementById("canvas"), "svg.png", { backgroundColor: "white" });
+    }
+
+    //显示帮助
+    function showHelp() {
+      alert("快捷键:\n"
+        + "h [字母h]: 查看帮助\n"
+        + "l [字母l]: 切换所有节点的标签显示\n"
+        + "f [字母f]: 切换拖拽固定模式\n"
+        + "← [方向左键]: 加载前一个拓扑\n"
+        + "→ [方向右键]: 加载下一个拓扑\n"
+        + "s [字母s]: 保存坐标\n"
+        + "e [字母e]: 导出图片\n"
+        + "p [字母p]: 暂停迭代\n");
+    }
+
+    //显示画布内容
+    function Display() {
+      link = container.selectAll(".link")
+        .data(bilinks)
+        .enter().append("path")
+        .attr("class", "link")
+        .attr("stroke-width", function (d) { return d[3]; })
+        .attr("stroke", function (d) { return linkColorMap(d[5]); })
+        .attr("opacity", function (d) { return d[6]; });//设置透明度
+
+      node = container.selectAll(".node")
+        .data(nodes.filter(getLabel))
+        .enter().append("g")
+        .attr("class", "node")
+        .call(d3.drag()  /*鼠标拖拽 对应Fl()函数*/
           .on("start", dragstarted)
           .on("drag", dragged)
           .on("end", dragended));
 
- node.append("circle")  
-    .attr("r", function(d) { return d.radius; })
-    .attr("opacity", function(d) { return d.opacity; })//设置透明度
-    .style("fill",function(d) { return color(d.color); });
-  //显示节点标签
-  //点是网关颜色为红色
-  node.append("text")
-    .attr("x", 12)
-    .attr("dy", ".35em")
-    .style("fill",function(d) { return d.properties.gateway?"red":"black"; })
-    .text(function(d) {  return d.label; });
-
-  function dragstarted(d) {
-    //alpha是动画的冷却系数，运动过程中会不断减小，直到小于0.005为止，此时动画会停止。
-    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x, d.fy = d.y;
-  }
-
-  function dragged(d) {
-    var offset = $("svg").offset(); //获取到这个元素的位置
-    d.fx = d3.event.x, d.fy = d3.event.y;//d.x是当前位置，d.fx是固定位置
-  }
-
-  function dragended(d) {
-    if (!d3.event.active) simulation.alphaTarget(0);
-	if(key!=70){
-		d.fx = null, d.fy = null;
-		console.log("b");
-	}
-	
-  }
-}
-
-var simulation;
-
-//创建图的模拟器
-function Simulation(){
- simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().distance(linkDistance).strength(1).iterations(10))
-    .force("charge", d3.forceManyBody().strength(-40))
-    .force("center", d3.forceCenter(width / 2, height / 2));
-    // .force('collision', d3.forceCollide().radius(10))
-  //长度
-  function linkDistance(d) {
-    if (d.length == undefined) {
-      return 20;
-    } else {
-      return d.length;
-    }
-  }
-    node.selectAll("circle")
-      .on("click", showLabel);
-
-    node.selectAll("text")
-      .on("click", hideLabel);
-
-    function showLabel(d){
-      global_node = d3.select(this);//获取点击节点
-      //打印节点的属性到表格
-      d3.select('#NID').text(d.id);
-      $('#node_colorSliderOutput').val(d.color);
-      $("#node_colorSliderInput").val(d.color);
-      $('#node_radiusSliderOutput').val(d.radius);
-      $("#node_radiusSliderInput").val(d.radius);
-      $('#node_opacitySliderOutput').val(d.opacity);
-      $("#node_opacitySliderInput").val(d.opacity);
-      // console.log(global_node);
-      if ($(this).next().is(":hidden")) {
-        $(this).next().show();
+      function setShape(d) {
+        console.log("shape=" + d.shape + ", r=" + d.radius);
+        if (d.shape == 1) {
+          return "rect";
+        } else {
+          return "circle";
+        }
       }
-      else{
-        $(this).next().hide(); 
+
+      node.append("circle")
+        // .attr("x", function (d) { return -0.7071 * d.radius; })
+        // .attr("y", function (d) { return -0.7071 * d.radius; })
+        // .attr("width", function (d) { return 1.4142 * d.radius; })
+        // .attr("height", function (d) { return 1.4142 * d.radius; })
+        .attr("r", function (d) { return d.radius; })
+        .attr("opacity", function (d) { return d.opacity; })//设置透明度
+        .style("fill", function (d) { return nodeColorMap(d.color); });
+      //显示节点标签
+      //点是网关颜色为红色
+      node.append("text")
+        .attr("x", 12)
+        .attr("dy", ".35em")
+        .style("fill", getLabelColor)
+        .text(getLabel);
+
+      function dragstarted(d) {
+        //alpha是动画的冷却系数，运动过程中会不断减小，直到小于0.005为止，此时动画会停止。
+        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x, d.fy = d.y;
+      }
+
+      function dragged(d) {
+        var offset = $("svg").offset(); //获取到这个元素的位置
+        d.fx = d3.event.x, d.fy = d3.event.y;//d.x是当前位置，d.fx是固定位置
+      }
+
+      function dragended(d) {
+        if (!d3.event.active) simulation.alphaTarget(0);
+        if (fixMode) {
+          d.fx = null, d.fy = null;
+          tvlog("b");
+        }
       }
     }
 
-    function hideLabel(d) {
-      $(this).hide(); 
-    }
+    //创建图的模拟器
+    function Simulation() {
+      simulation = d3.forceSimulation()
+        .force("link", d3.forceLink().distance(getDist).strength(1).iterations(20))
+        .force("charge", d3.forceManyBody().strength(-400))
+        // .force("center", d3.forceCenter(width / 2, height / 2))
+        // .force('collision', d3.forceCollide().radius(10))
+        ;
 
-    //隐藏所有标签
-    d3.select("#hideBtn")
-      .on("click", hideAllLabels);
+      function showLabel(d) {
+        globalNode = d3.select(this);//获取点击节点
+        //打印节点的属性到表格
+        d3.select('#NID').text(d.id);
+        $('#node_colorSliderOutput').val(d.color);
+        $("#node_colorSliderInput").val(d.color);
+        $('#node_radiusSliderOutput').val(d.radius);
+        $("#node_radiusSliderInput").val(d.radius);
+        $('#node_opacitySliderOutput').val(d.opacity);
+        $("#node_opacitySliderInput").val(d.opacity);
+        tvlog(globalNode);
+        if ($(this).next().is(":hidden")) {
+          $(this).next().show();
+        }
+        else {
+          $(this).next().hide();
+        }
+      }
 
-    function hideAllLabels(){
-      node.selectAll("text").each(function(){
+      function hideLabel(d) {
         $(this).hide();
-      });
-    }
+      }
 
-    //显示所有标签
-    d3.select("#showBtn")
-      .on("click", showAllLabels);
+      node.selectAll("circle")
+        .on("click", showLabel);
 
-    function showAllLabels(){
-      node.selectAll("text").each(function(d){
-        // console.log(d['id']);
-        $(this).show();
-      });
-    }
+      node.selectAll("text")
+        .on("click", hideLabel);
 
-    //缩放
-    zoom = d3.zoom()
-          .scaleExtent([0.2, 100])
-          // .translateExtent([[0, 0], [svg.attr("width"), svg.attr("height")]])
-          // .extent([[0, 0], [svg.attr("width"), svg.attr("height")]])
-          .on("zoom", zoomed);
 
-    svg.call(zoom);
+      //切换所有标签显示隐藏
+      d3.select("#toggleBtn")
+        .on("click", toggleAllLabels);
 
-    function zoomed() {
-      container.attr("transform",d3.event.transform);
-      d3.select("#scale").text("缩放比例：" + parseInt(d3.event.transform.k*100)+"%");
-    }
+      //缩放
+      zoom = d3.zoom()
+        .scaleExtent([0.2, 100])
+        // .translateExtent([[0, 0], [svg.attr("width"), svg.attr("height")]])
+        // .extent([[0, 0], [svg.attr("width"), svg.attr("height")]])
+        .on("zoom", zoomed);
 
-    /*修改节点、边属性*/
-    //点的颜色
-    d3.select("#node_colorSliderInput")
-      .on("change", function (){
-        // console.log($("#node_colorSliderOutput").val()+" c:"+d3.select('#NID').text());
-        if (d3.select('#NID').text() != 0) {
-          global_node
-            .style("fill", function() { return color($("#node_colorSliderOutput").val()); });
-        }
-    }); 
-    //点的半径
-    d3.select("#node_radiusSliderInput")
-      .on("change", function (){
-        if (d3.select('#NID').text() != 0) {
-          global_node
-            .attr("r", function() { return $("#node_radiusSliderOutput").val(); });
-        }
-    });
-    //点透明度
-    d3.select("#node_opacitySliderInput")
-      .on("change", function (){
-        if (d3.select('#NID').text() != 0) {
-          global_node
-            .attr("opacity", function() { return $("#node_opacitySliderOutput").val(); });
-          // cur_g = node.select(function() { return global_node.parentNode; });
-          // console.log(cur_g);
-        }
-    });
-    node_opacitySliderInput
-    //边的颜色
-    d3.select("#link_colorSliderInput")
-      .on("change", function (){
-        if (global_link) {
-          global_link
-            .style("stroke", function() { return color1($("#link_colorSliderOutput").val()); });
-        }
-    }); 
-    //边的宽度
-    d3.select("#link_widthSliderInput")
-      .on("change", function (){
-        if (global_link) {
-          global_link
-            .attr("stroke-width", function() { return $("#link_widthSliderOutput").val(); });
-        }
-    });
-    //边的透明度
-    d3.select("#link_opacitySliderInput")
-      .on("change", function (){
-        if (global_link) {
-          global_link
-            .attr("opacity", function() { return $("#link_opacitySliderOutput").val(); });
-        }
-    });
+      svg.call(zoom);
 
-  svg.selectAll(".link")
-      .on("click", function (d){
-        console.log(d);
-        global_link = d3.select(this);
-        d3.select('#LID').text(d[7]);
-        $('#link_colorSliderOutput').val(d[5]);
-        $("#link_colorSliderInput").val(d[5]);
-        $('#link_widthSliderOutput').val(d[3]);
-        $("#link_widthSliderInput").val(d[3]);
-        $('#link_opacitySliderOutput').val(d[6]);
-        $("#link_opacitySliderInput").val(d[6]);
-        // console.log(global_link);
-  });
-  /*修改Simulation属性*/
-  function updateForces() {
-    // get each force by name and update the properties
-    simulation.force("link")
-        .strength(forceProperties.link.strength)
-        .distance(forceProperties.link.distance)
-        .iterations(forceProperties.link.iterations)
+      function zoomed() {
+        container.attr("transform", d3.event.transform);
+        d3.select("#scale").text("缩放比例：" + parseInt(d3.event.transform.k * 100) + "%");
+      }
+
+      /*修改节点、边属性*/
+      //点的颜色
+      d3.select("#node_colorSliderInput")
+        .on("change", function () {
+          tvlog($("#node_colorSliderOutput").val() + " c:" + d3.select('#NID').text());
+          if (d3.select('#NID').text() != 0) {
+            globalNode.style("fill", function () { return nodeColorMap($("#node_colorSliderOutput").val()); });
+          }
+        });
+      //点的半径
+      d3.select("#node_radiusSliderInput")
+        .on("change", function () {
+          if (d3.select('#NID').text() != 0) {
+            globalNode.attr("r", function () { return $("#node_radiusSliderOutput").val(); });
+          }
+        });
+      //点透明度
+      d3.select("#node_opacitySliderInput")
+        .on("change", function () {
+          if (d3.select('#NID').text() != 0) {
+            globalNode.attr("opacity", function () { return $("#node_opacitySliderOutput").val(); });
+            // cur_g = node.select(function() { return globalNode.parentNode; });
+            tvlog(cur_g);
+          }
+        });
+      node_opacitySliderInput
+      //边的颜色
+      d3.select("#link_colorSliderInput")
+        .on("change", function () {
+          if (globalLink) {
+            globalLink.style("stroke", function () { return linkColorMap($("#link_colorSliderOutput").val()); });
+          }
+        });
+      //边的宽度
+      d3.select("#link_widthSliderInput")
+        .on("change", function () {
+          if (globalLink) {
+            globalLink.attr("stroke-width", function () { return $("#link_widthSliderOutput").val(); });
+          }
+        });
+      //边的透明度
+      d3.select("#link_opacitySliderInput")
+        .on("change", function () {
+          if (globalLink) {
+            globalLink.attr("opacity", function () { return $("#link_opacitySliderOutput").val(); });
+          }
+        });
+
+      svg.selectAll(".link")
+        .on("click", function (d) {
+          tvlog(d);
+          globalLink = d3.select(this);
+          d3.select('#LID').text(d[7]);
+          $('#link_colorSliderOutput').val(d[5]);
+          $("#link_colorSliderInput").val(d[5]);
+          $('#link_widthSliderOutput').val(d[3]);
+          $("#link_widthSliderInput").val(d[3]);
+          $('#link_opacitySliderOutput').val(d[6]);
+          $("#link_opacitySliderInput").val(d[6]);
+          tvlog(globalLink);
+        });
+
+      /*修改Simulation属性*/
+      function updateForces() {
+        // get each force by name and update the properties
+        simulation.force("link")
+          .strength(forceProperties.link.strength)
+          .distance(getDist)
+          .iterations(forceProperties.link.iterations)
+          .links(links);
+
+        simulation.force("xl", d3.forceX().strength(forceProperties.forceX.strength).x(width * (0.5 * forceProperties.forceX.x)));
+        simulation.force("xm", d3.forceX().strength(forceProperties.forceX.strength).x(width * 0.5));
+        simulation.force("xr", d3.forceX().strength(forceProperties.forceX.strength).x(width * (1 - 0.5 * forceProperties.forceX.x)));
+        simulation.force("yt", d3.forceY().strength(forceProperties.forceY.strength).y(height * (0.5 * forceProperties.forceY.y)));
+        simulation.force("ym", d3.forceY().strength(forceProperties.forceY.strength).y(height * 0.5));
+        simulation.force("yb", d3.forceY().strength(forceProperties.forceY.strength).y(height * (1 - 0.5 * forceProperties.forceY.y)));
+
+        // updates ignored until this is run
+        // restarts the simulation (important if simulation has already slowed down)
+        simulation.alpha(1).restart();
+      }
+
+      //strength
+      d3.select("#link_strengthSliderInput")
+        .on("change", function () {
+          forceProperties.link.strength = $("#link_strengthSliderOutput").val();
+          tvlog(forceProperties);
+          updateForces();
+        });
+      //distance
+      d3.select("#link_distanceSliderInput")
+        .on("change", function () {
+          forceProperties.link.distance = $("#link_distanceSliderOutput").val();
+          tvlog(forceProperties);
+          updateForces();
+        });
+      //iterations
+      d3.select("#link_iterationsSliderInput")
+        .on("change", function () {
+          forceProperties.link.iterations = $("#link_iterationsSliderOutput").val();
+          tvlog(forceProperties);
+          updateForces();
+        });
+      //*修改forceX属性*/
+      //strength
+      d3.select("#forceX_StrengthSliderInput")
+        .on("change", function () {
+          forceProperties.forceX.strength = $("#forceX_StrengthSliderOutput").val();
+          tvlog(forceProperties);
+          updateForces();
+        });
+      //x
+      d3.select("#forceX_XSliderInput")
+        .on("change", function () {
+          forceProperties.forceX.x = $("#forceX_XSliderOutput").val();
+          tvlog(forceProperties);
+          updateForces();
+        });
+      //*修改forceY属性*/
+      //strength
+      d3.select("#forceY_StrengthSliderInput")
+        .on("change", function () {
+          forceProperties.forceY.strength = $("#forceY_StrengthSliderOutput").val();
+          tvlog(forceProperties);
+          updateForces();
+        });
+      //y
+      d3.select("#forceY_YSliderInput")
+        .on("change", function () {
+          forceProperties.forceY.y = $("#forceY_YSliderOutput").val();
+          tvlog(forceProperties);
+          updateForces();
+        });
+
+      //停止迭代
+      d3.select("#showHelp").on("click", showHelp);
+
+      //另存为图片
+      d3.select("#saveAsPng").on("click", exportFigure);
+
+      node.append("title").text(function (d) { return d.id; });
+
+      simulation
+        .nodes(nodes)
+        .on("tick", ticked);
+
+      simulation.force("link")
         .links(links);
 
-    simulation.force("x", d3.forceX().strength(forceProperties.forceX.strength).x(width * forceProperties.forceX.x));
+      function ticked() {
+        link.attr("d", positionLink);
+        node.attr("transform", positionNode);
+      }
 
-    simulation.force("y", d3.forceY().strength(forceProperties.forceY.strength).y(height * forceProperties.forceY.y));
+      function positionLink(d) {
+        //d是路径描述，M是Moveto，移动到，C是Curveto，表示贝塞尔曲线
+        tvlog(d);
+        return "M" + d[0].x + "," + d[0].y
+          + "S" + d[1].x + "," + d[1].y
+          + " " + d[2].x + "," + d[2].y;
+      }
 
-    // updates ignored until this is run
-    // restarts the simulation (important if simulation has already slowed down)
-    simulation.alpha(1).restart();
-  }
-  //strength
-  d3.select("#link_strengthSliderInput")
-      .on("change", function (){
-        forceProperties.link.strength=$("#link_strengthSliderOutput").val();
-        // console.log(forceProperties);
-        updateForces();
-    });
-  //distance
-  d3.select("#link_distanceSliderInput")
-      .on("change", function (){
-        forceProperties.link.distance=$("#link_distanceSliderOutput").val();
-        // console.log(forceProperties);
-        updateForces();
-    });
-  //iterations
-  d3.select("#link_iterationsSliderInput")
-      .on("change", function (){
-        forceProperties.link.iterations=$("#link_iterationsSliderOutput").val();
-        // console.log(forceProperties);
-        updateForces();
-    });
-  //*修改forceX属性*/
-  //strength
-  d3.select("#forceX_StrengthSliderInput")
-    .on("change", function (){
-      forceProperties.forceX.strength=$("#forceX_StrengthSliderOutput").val();
-      // console.log(forceProperties);
+      function positionNode(d) {
+        tvlog(d);
+        // d.x = d.x - 5/2 < 0     ? 5 : d.x ;
+        // d.x = d.x + 5/2 > width ? width - 5 : d.x ;
+        // d.y = d.y - 5/2 < 0      ? 5 : d.y ;
+        // d.y = d.y + 5/2 > height ? height - 5 : d.y ;
+        return "translate(" + d.x + "," + d.y + ")";
+      }
+
       updateForces();
-  });
-  //x
-  d3.select("#forceX_XSliderInput")
-  .on("change", function (){
-    forceProperties.forceX.x=$("#forceX_XSliderOutput").val();
-    // console.log(forceProperties);
-    updateForces();
-  });
-  //*修改forceY属性*/
-  //strength
-  d3.select("#forceY_StrengthSliderInput")
-    .on("change", function (){
-      forceProperties.forceY.strength=$("#forceY_StrengthSliderOutput").val();
-      // console.log(forceProperties);
-      updateForces();
-  });
-  //y
-  d3.select("#forceY_YSliderInput")
-  .on("change", function (){
-    forceProperties.forceY.y=$("#forceY_YSliderOutput").val();
-    // console.log(forceProperties);
-    updateForces();
-  });
-  //停止迭代
-  d3.select("#stopBtn")
-    .on("click", function (){
-      simulation.stop();
-  });
-
-  //另存为几何图
-  d3.select("#saveAsXY")
-    .on("click", function (){
-      var text = JSON.stringify(nodes);
-      var file = new File([text], "coord.json", {type: "application/json;charset=utf-8"});
-      saveAs(file);
-  });
-
-  //另存为图片
-  d3.select("#saveAsPng")
-    .on("click", function (){
-      saveSvgAsPng(document.getElementById("canvas"), "svg.png", {backgroundColor: "white"});
-  });
-
-  node.append("title")
-    .text(function(d) { return d.id; });
-
-  simulation
-    .nodes(nodes)
-    .on("tick", ticked);
-
-  simulation.force("link")
-    .links(links); 
-
-  function ticked() {
-    link.attr("d", positionLink);
-    node.attr("transform", positionNode);
-  }
-
-  function positionLink(d) {
-    //d是路径描述，M是Moveto，移动到，C是Curveto，表示贝塞尔曲线
-    // console.log(d);
-    return "M" + d[0].x + "," + d[0].y
-         + "S" + d[1].x + "," + d[1].y
-         + " " + d[2].x + "," + d[2].y;
-  }
-
-  function positionNode(d) {
-    // console.log(d);
-    // d.x = d.x - 5/2 < 0     ? parseInt(Math.random()*20+20) : d.x ;
-    // d.x = d.x + 5/2 > width ? width - parseInt(Math.random()*20+20) : d.x ;
-    // d.y = d.y - 5/2 < 0      ? parseInt(Math.random()*20+20) : d.y ;
-    // d.y = d.y + 5/2 > height ? height - parseInt(Math.random()*20+20) : d.y ;
-    d.x = d.x - 5/2 < 0     ? 5 : d.x ;
-    d.x = d.x + 5/2 > width ? width - 5 : d.x ;
-    d.y = d.y - 5/2 < 0      ? 5 : d.y ;
-    d.y = d.y + 5/2 > height ? height - 5 : d.y ;
-    return "translate(" + d.x + "," + d.y + ")";
-  }
-
-}
-
-//切换拓扑图
-$(document).keydown(function(e){
-   key =  e.which;
-   if (key == 40 || key == 38) {
-      e.preventDefault();
-   }
-});
-
-
-/*用数字来命名文件
-0,1,2,3,4.
-*/
-$(document).keyup(function(e){
-    key =  e.which;
-    console.log(key);
-    if(key == 40){//down
-      var newFileName;
-      //clear svg
-      d3.selectAll("svg > *").remove();
-      if (JsonFileName == "0.json") {
-        newFileName = "0.json"
-      }
-      else{
-        var num = parseInt(JsonFileName.match(/(\d)/)[1])-1;
-        // console.log("page: "+num);
-        if(num == 0){
-          newFileName = "0.json";
-        }
-        else{
-          newFileName = num+".json";
-        }
-      }
-      host_name = window.location.host;   // localhost:81
-      path_name = window.location.pathname; // /index.htm
-      window.location.href="http://"+host_name+path_name+"?"+newFileName;
-      // setTopology(newFileName);
     }
-    else if(key == 38){//up
-      d3.selectAll("svg > *").remove();
-      var newFileName;
-      // console.log(JsonFileName);
-      if (JsonFileName == "0.json") {
-        newFileName = "1.json"
-      }
-      else{
-        var num = parseInt(JsonFileName.match(/(\d)/)[1])+1;
-        //console.log(num);
-          newFileName = num+".json";
-      }
-    host_name = window.location.host;   // localhost:81
-    path_name = window.location.pathname; // /index.htm
-    window.location.href="http://"+host_name+path_name+"?"+newFileName;
-    }
-});
 
-</script>
+    //快捷键设置 (https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
+    $(document).keydown(function (e) {
+      var key = e.which;
+      if (key == 37 || key == 39) {
+        e.preventDefault();
+      }
+    });
+
+    $(document).keyup(function (e) {
+      var key = e.which;
+      tvlog(key);
+
+      function setUrl(newFileName) {
+        window.location.href = "http://" + window.location.host + window.location.pathname + "?" + newFileName;
+      }
+
+      if (key == 72) {//h键, 查看帮助
+        showHelp();
+      } else if (key == 76) {//l键, 切换标签显示
+        toggleAllLabels();
+      } else if (key == 70) {//f键, 拖拽进入固定模式
+        fixMode = !fixMode;
+      } else if (key == 37) {//左箭头, 加载前一个拓扑 (文件用数字命名)
+        var newFileName;
+        //clear svg
+        d3.selectAll("svg > *").remove();
+        if (jsonFileName == "0.json") {
+          newFileName = "0.json"
+        } else {
+          var num = parseInt(jsonFileName.match(/(\d)/)[1]) - 1;
+          tvlog("page: " + num);
+          if (num == 0) {
+            newFileName = "0.json";
+          } else {
+            newFileName = num + ".json";
+          }
+        }
+        setUrl(newFileName);
+        // setTopology(newFileName);
+      } else if (key == 39) {//右键头, 加载下一个拓扑 (文件用数字命名)
+        d3.selectAll("svg > *").remove();
+        var newFileName;
+        tvlog(jsonFileName);
+        if (jsonFileName == "0.json") {
+          newFileName = "1.json"
+        } else {
+          var num = parseInt(jsonFileName.match(/(\d)/)[1]) + 1;
+          tvlog(num);
+          newFileName = num + ".json";
+        }
+        setUrl(newFileName);
+      } else if (key == 83) {//保存坐标
+        saveCoord();
+      } else if (key == 69) {//导出图片
+        exportFigure();
+      } else if (key == 80) {//暂停迭代
+        simulation.stop();
+      }
+    });
+  </script>
 
 </html>
 </body>

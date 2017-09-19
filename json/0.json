@@ -6,9 +6,6 @@
             "source": "rp.1001101",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 2,
             "id": 0,
             "target": "rp.1001102"
@@ -19,9 +16,6 @@
             "source": "sp.1001001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 1,
             "target": "sp.1001002"
@@ -32,9 +26,6 @@
             "source": "sp.1001002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 2,
             "target": "sp.1001003"
@@ -45,9 +36,6 @@
             "source": "sp.1001003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 3,
             "target": "sp.1001004"
@@ -58,9 +46,6 @@
             "source": "sp.1001001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 4,
             "target": "sp.1001004"
@@ -71,9 +56,6 @@
             "source": "sp.1001001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 5,
             "target": "rp.1001101"
@@ -84,9 +66,6 @@
             "source": "sp.1001002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 6,
             "target": "rp.1001101"
@@ -97,9 +76,6 @@
             "source": "sp.1001003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 7,
             "target": "rp.1001101"
@@ -110,9 +86,6 @@
             "source": "sp.1001004",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 8,
             "target": "rp.1001101"
@@ -123,9 +96,6 @@
             "source": "sp.1001001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 9,
             "target": "rp.1001102"
@@ -136,9 +106,6 @@
             "source": "sp.1001002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 10,
             "target": "rp.1001102"
@@ -149,9 +116,6 @@
             "source": "sp.1001003",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 11,
             "target": "rp.1001102"
@@ -162,9 +126,6 @@
             "source": "sp.1001004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 12,
             "target": "rp.1001102"
@@ -175,9 +136,6 @@
             "source": "rp.1002101",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 1,
             "id": 13,
             "target": "rp.1002102"
@@ -188,9 +146,6 @@
             "source": "sp.1002001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 14,
             "target": "sp.1002002"
@@ -201,9 +156,6 @@
             "source": "sp.1002002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 15,
             "target": "sp.1002003"
@@ -214,9 +166,6 @@
             "source": "sp.1002003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 16,
             "target": "sp.1002004"
@@ -227,9 +176,6 @@
             "source": "sp.1002001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 17,
             "target": "sp.1002004"
@@ -240,9 +186,6 @@
             "source": "sp.1002001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 18,
             "target": "rp.1002101"
@@ -253,9 +196,6 @@
             "source": "sp.1002002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 19,
             "target": "rp.1002101"
@@ -266,9 +206,6 @@
             "source": "sp.1002003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 20,
             "target": "rp.1002101"
@@ -279,9 +216,6 @@
             "source": "sp.1002004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 21,
             "target": "rp.1002101"
@@ -292,9 +226,6 @@
             "source": "sp.1002001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 22,
             "target": "rp.1002102"
@@ -305,9 +236,6 @@
             "source": "sp.1002002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 23,
             "target": "rp.1002102"
@@ -318,9 +246,6 @@
             "source": "sp.1002003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 24,
             "target": "rp.1002102"
@@ -331,9 +256,6 @@
             "source": "sp.1002004",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 25,
             "target": "rp.1002102"
@@ -344,9 +266,6 @@
             "source": "rp.1003101",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 3,
             "id": 26,
             "target": "rp.1003102"
@@ -357,9 +276,6 @@
             "source": "sp.1003001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 27,
             "target": "sp.1003002"
@@ -370,9 +286,6 @@
             "source": "sp.1003002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 28,
             "target": "sp.1003003"
@@ -383,9 +296,6 @@
             "source": "sp.1003003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 29,
             "target": "sp.1003004"
@@ -396,9 +306,6 @@
             "source": "sp.1003001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 30,
             "target": "sp.1003004"
@@ -409,9 +316,6 @@
             "source": "sp.1003001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 31,
             "target": "rp.1003101"
@@ -422,9 +326,6 @@
             "source": "sp.1003002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 32,
             "target": "rp.1003101"
@@ -435,9 +336,6 @@
             "source": "sp.1003003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 33,
             "target": "rp.1003101"
@@ -448,9 +346,6 @@
             "source": "sp.1003004",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 34,
             "target": "rp.1003101"
@@ -461,9 +356,6 @@
             "source": "sp.1003001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 35,
             "target": "rp.1003102"
@@ -474,9 +366,6 @@
             "source": "sp.1003002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 36,
             "target": "rp.1003102"
@@ -487,9 +376,6 @@
             "source": "sp.1003003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 37,
             "target": "rp.1003102"
@@ -500,9 +386,6 @@
             "source": "sp.1003004",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 38,
             "target": "rp.1003102"
@@ -513,9 +396,6 @@
             "source": "rp.1004101",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 2,
             "id": 39,
             "target": "rp.1004102"
@@ -526,9 +406,6 @@
             "source": "sp.1004001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 40,
             "target": "sp.1004002"
@@ -539,9 +416,6 @@
             "source": "sp.1004002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 41,
             "target": "sp.1004003"
@@ -552,9 +426,6 @@
             "source": "sp.1004003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 42,
             "target": "sp.1004004"
@@ -565,9 +436,6 @@
             "source": "sp.1004001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 43,
             "target": "sp.1004004"
@@ -578,9 +446,6 @@
             "source": "sp.1004001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 44,
             "target": "rp.1004101"
@@ -591,9 +456,6 @@
             "source": "sp.1004002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 45,
             "target": "rp.1004101"
@@ -604,9 +466,6 @@
             "source": "sp.1004003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 46,
             "target": "rp.1004101"
@@ -617,9 +476,6 @@
             "source": "sp.1004004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 47,
             "target": "rp.1004101"
@@ -630,9 +486,6 @@
             "source": "sp.1004001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 48,
             "target": "rp.1004102"
@@ -643,9 +496,6 @@
             "source": "sp.1004002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 49,
             "target": "rp.1004102"
@@ -656,9 +506,6 @@
             "source": "sp.1004003",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 50,
             "target": "rp.1004102"
@@ -669,9 +516,6 @@
             "source": "sp.1004004",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 51,
             "target": "rp.1004102"
@@ -682,9 +526,6 @@
             "source": "rp.1005101",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 2,
             "id": 52,
             "target": "rp.1005102"
@@ -695,9 +536,6 @@
             "source": "sp.1005001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 53,
             "target": "sp.1005002"
@@ -708,9 +546,6 @@
             "source": "sp.1005002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 54,
             "target": "sp.1005003"
@@ -721,9 +556,6 @@
             "source": "sp.1005003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 55,
             "target": "sp.1005004"
@@ -734,9 +566,6 @@
             "source": "sp.1005001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 56,
             "target": "sp.1005004"
@@ -747,9 +576,6 @@
             "source": "sp.1005001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 57,
             "target": "rp.1005101"
@@ -760,9 +586,6 @@
             "source": "sp.1005002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 58,
             "target": "rp.1005101"
@@ -773,9 +596,6 @@
             "source": "sp.1005003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 59,
             "target": "rp.1005101"
@@ -786,9 +606,6 @@
             "source": "sp.1005004",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 60,
             "target": "rp.1005101"
@@ -799,9 +616,6 @@
             "source": "sp.1005001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 61,
             "target": "rp.1005102"
@@ -812,9 +626,6 @@
             "source": "sp.1005002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 62,
             "target": "rp.1005102"
@@ -825,9 +636,6 @@
             "source": "sp.1005003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 63,
             "target": "rp.1005102"
@@ -838,9 +646,6 @@
             "source": "sp.1005004",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 64,
             "target": "rp.1005102"
@@ -851,9 +656,6 @@
             "source": "rp.2001101",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 2,
             "id": 65,
             "target": "rp.2001102"
@@ -864,9 +666,6 @@
             "source": "sp.2001001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 66,
             "target": "sp.2001002"
@@ -877,9 +676,6 @@
             "source": "sp.2001002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 67,
             "target": "sp.2001003"
@@ -890,9 +686,6 @@
             "source": "sp.2001003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 68,
             "target": "sp.2001004"
@@ -903,9 +696,6 @@
             "source": "sp.2001001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 69,
             "target": "sp.2001004"
@@ -916,9 +706,6 @@
             "source": "sp.2001001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 70,
             "target": "rp.2001101"
@@ -929,9 +716,6 @@
             "source": "sp.2001002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 71,
             "target": "rp.2001101"
@@ -942,9 +726,6 @@
             "source": "sp.2001003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 72,
             "target": "rp.2001101"
@@ -955,9 +736,6 @@
             "source": "sp.2001004",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 73,
             "target": "rp.2001101"
@@ -968,9 +746,6 @@
             "source": "sp.2001001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 74,
             "target": "rp.2001102"
@@ -981,9 +756,6 @@
             "source": "sp.2001002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 75,
             "target": "rp.2001102"
@@ -994,9 +766,6 @@
             "source": "sp.2001003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 76,
             "target": "rp.2001102"
@@ -1007,9 +776,6 @@
             "source": "sp.2001004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 77,
             "target": "rp.2001102"
@@ -1020,9 +786,6 @@
             "source": "rp.2002101",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 2,
             "id": 78,
             "target": "rp.2002102"
@@ -1033,9 +796,6 @@
             "source": "sp.2002001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 79,
             "target": "sp.2002002"
@@ -1046,9 +806,6 @@
             "source": "sp.2002002",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 80,
             "target": "sp.2002003"
@@ -1059,9 +816,6 @@
             "source": "sp.2002003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 81,
             "target": "sp.2002004"
@@ -1072,9 +826,6 @@
             "source": "sp.2002001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 82,
             "target": "sp.2002004"
@@ -1085,9 +836,6 @@
             "source": "sp.2002001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 83,
             "target": "rp.2002101"
@@ -1098,9 +846,6 @@
             "source": "sp.2002002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 84,
             "target": "rp.2002101"
@@ -1111,9 +856,6 @@
             "source": "sp.2002003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 85,
             "target": "rp.2002101"
@@ -1124,9 +866,6 @@
             "source": "sp.2002004",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 86,
             "target": "rp.2002101"
@@ -1137,9 +876,6 @@
             "source": "sp.2002001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 87,
             "target": "rp.2002102"
@@ -1150,9 +886,6 @@
             "source": "sp.2002002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 88,
             "target": "rp.2002102"
@@ -1163,9 +896,6 @@
             "source": "sp.2002003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 89,
             "target": "rp.2002102"
@@ -1176,9 +906,6 @@
             "source": "sp.2002004",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 90,
             "target": "rp.2002102"
@@ -1189,9 +916,6 @@
             "source": "rp.2003101",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 2,
             "id": 91,
             "target": "rp.2003102"
@@ -1202,9 +926,6 @@
             "source": "sp.2003001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 92,
             "target": "sp.2003002"
@@ -1215,9 +936,6 @@
             "source": "sp.2003002",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 93,
             "target": "sp.2003003"
@@ -1228,9 +946,6 @@
             "source": "sp.2003003",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 94,
             "target": "sp.2003004"
@@ -1241,9 +956,6 @@
             "source": "sp.2003001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 95,
             "target": "sp.2003004"
@@ -1254,9 +966,6 @@
             "source": "sp.2003001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 96,
             "target": "rp.2003101"
@@ -1267,9 +976,6 @@
             "source": "sp.2003002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 97,
             "target": "rp.2003101"
@@ -1280,9 +986,6 @@
             "source": "sp.2003003",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 98,
             "target": "rp.2003101"
@@ -1293,9 +996,6 @@
             "source": "sp.2003004",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 99,
             "target": "rp.2003101"
@@ -1306,9 +1006,6 @@
             "source": "sp.2003001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 100,
             "target": "rp.2003102"
@@ -1319,9 +1016,6 @@
             "source": "sp.2003002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 101,
             "target": "rp.2003102"
@@ -1332,9 +1026,6 @@
             "source": "sp.2003003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 102,
             "target": "rp.2003102"
@@ -1345,9 +1036,6 @@
             "source": "sp.2003004",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 103,
             "target": "rp.2003102"
@@ -1358,9 +1046,6 @@
             "source": "rp.2004101",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 2,
             "id": 104,
             "target": "rp.2004102"
@@ -1371,9 +1056,6 @@
             "source": "sp.2004001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 105,
             "target": "sp.2004002"
@@ -1384,9 +1066,6 @@
             "source": "sp.2004002",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 106,
             "target": "sp.2004003"
@@ -1397,9 +1076,6 @@
             "source": "sp.2004003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 107,
             "target": "sp.2004004"
@@ -1410,9 +1086,6 @@
             "source": "sp.2004001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 108,
             "target": "sp.2004004"
@@ -1423,9 +1096,6 @@
             "source": "sp.2004001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 109,
             "target": "rp.2004101"
@@ -1436,9 +1106,6 @@
             "source": "sp.2004002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 110,
             "target": "rp.2004101"
@@ -1449,9 +1116,6 @@
             "source": "sp.2004003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 111,
             "target": "rp.2004101"
@@ -1462,9 +1126,6 @@
             "source": "sp.2004004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 112,
             "target": "rp.2004101"
@@ -1475,9 +1136,6 @@
             "source": "sp.2004001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 113,
             "target": "rp.2004102"
@@ -1488,9 +1146,6 @@
             "source": "sp.2004002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 114,
             "target": "rp.2004102"
@@ -1501,9 +1156,6 @@
             "source": "sp.2004003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 115,
             "target": "rp.2004102"
@@ -1514,9 +1166,6 @@
             "source": "sp.2004004",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 116,
             "target": "rp.2004102"
@@ -1527,9 +1176,6 @@
             "source": "rp.2005101",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 2,
             "id": 117,
             "target": "rp.2005102"
@@ -1540,9 +1186,6 @@
             "source": "sp.2005001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 118,
             "target": "sp.2005002"
@@ -1553,9 +1196,6 @@
             "source": "sp.2005002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 119,
             "target": "sp.2005003"
@@ -1566,9 +1206,6 @@
             "source": "sp.2005003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 120,
             "target": "sp.2005004"
@@ -1579,9 +1216,6 @@
             "source": "sp.2005001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 121,
             "target": "sp.2005004"
@@ -1592,9 +1226,6 @@
             "source": "sp.2005001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 122,
             "target": "rp.2005101"
@@ -1605,9 +1236,6 @@
             "source": "sp.2005002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 123,
             "target": "rp.2005101"
@@ -1618,9 +1246,6 @@
             "source": "sp.2005003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 124,
             "target": "rp.2005101"
@@ -1631,9 +1256,6 @@
             "source": "sp.2005004",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 125,
             "target": "rp.2005101"
@@ -1644,9 +1266,6 @@
             "source": "sp.2005001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 126,
             "target": "rp.2005102"
@@ -1657,9 +1276,6 @@
             "source": "sp.2005002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 127,
             "target": "rp.2005102"
@@ -1670,9 +1286,6 @@
             "source": "sp.2005003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 128,
             "target": "rp.2005102"
@@ -1683,9 +1296,6 @@
             "source": "sp.2005004",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 129,
             "target": "rp.2005102"
@@ -1696,9 +1306,6 @@
             "source": "rp.3001101",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 3,
             "id": 130,
             "target": "rp.3001102"
@@ -1709,9 +1316,6 @@
             "source": "sp.3001001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 131,
             "target": "sp.3001002"
@@ -1722,9 +1326,6 @@
             "source": "sp.3001002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 132,
             "target": "sp.3001003"
@@ -1735,9 +1336,6 @@
             "source": "sp.3001003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 133,
             "target": "sp.3001004"
@@ -1748,9 +1346,6 @@
             "source": "sp.3001001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 134,
             "target": "sp.3001004"
@@ -1761,9 +1356,6 @@
             "source": "sp.3001001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 135,
             "target": "rp.3001101"
@@ -1774,9 +1366,6 @@
             "source": "sp.3001002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 136,
             "target": "rp.3001101"
@@ -1787,9 +1376,6 @@
             "source": "sp.3001003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 137,
             "target": "rp.3001101"
@@ -1800,9 +1386,6 @@
             "source": "sp.3001004",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 138,
             "target": "rp.3001101"
@@ -1813,9 +1396,6 @@
             "source": "sp.3001001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 139,
             "target": "rp.3001102"
@@ -1826,9 +1406,6 @@
             "source": "sp.3001002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 140,
             "target": "rp.3001102"
@@ -1839,9 +1416,6 @@
             "source": "sp.3001003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 141,
             "target": "rp.3001102"
@@ -1852,9 +1426,6 @@
             "source": "sp.3001004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 142,
             "target": "rp.3001102"
@@ -1865,9 +1436,6 @@
             "source": "rp.3002101",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 3,
             "id": 143,
             "target": "rp.3002102"
@@ -1878,9 +1446,6 @@
             "source": "sp.3002001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 144,
             "target": "sp.3002002"
@@ -1891,9 +1456,6 @@
             "source": "sp.3002002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 145,
             "target": "sp.3002003"
@@ -1904,9 +1466,6 @@
             "source": "sp.3002003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 146,
             "target": "sp.3002004"
@@ -1917,9 +1476,6 @@
             "source": "sp.3002001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 147,
             "target": "sp.3002004"
@@ -1930,9 +1486,6 @@
             "source": "sp.3002001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 148,
             "target": "rp.3002101"
@@ -1943,9 +1496,6 @@
             "source": "sp.3002002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 149,
             "target": "rp.3002101"
@@ -1956,9 +1506,6 @@
             "source": "sp.3002003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 150,
             "target": "rp.3002101"
@@ -1969,9 +1516,6 @@
             "source": "sp.3002004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 151,
             "target": "rp.3002101"
@@ -1982,9 +1526,6 @@
             "source": "sp.3002001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 152,
             "target": "rp.3002102"
@@ -1995,9 +1536,6 @@
             "source": "sp.3002002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 153,
             "target": "rp.3002102"
@@ -2008,9 +1546,6 @@
             "source": "sp.3002003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 154,
             "target": "rp.3002102"
@@ -2021,9 +1556,6 @@
             "source": "sp.3002004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 155,
             "target": "rp.3002102"
@@ -2034,9 +1566,6 @@
             "source": "rp.3003101",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 3,
             "id": 156,
             "target": "rp.3003102"
@@ -2047,9 +1576,6 @@
             "source": "sp.3003001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 157,
             "target": "sp.3003002"
@@ -2060,9 +1586,6 @@
             "source": "sp.3003002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 158,
             "target": "sp.3003003"
@@ -2073,9 +1596,6 @@
             "source": "sp.3003003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 159,
             "target": "sp.3003004"
@@ -2086,9 +1606,6 @@
             "source": "sp.3003001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 160,
             "target": "sp.3003004"
@@ -2099,9 +1616,6 @@
             "source": "sp.3003001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 161,
             "target": "rp.3003101"
@@ -2112,9 +1626,6 @@
             "source": "sp.3003002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 162,
             "target": "rp.3003101"
@@ -2125,9 +1636,6 @@
             "source": "sp.3003003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 163,
             "target": "rp.3003101"
@@ -2138,9 +1646,6 @@
             "source": "sp.3003004",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 164,
             "target": "rp.3003101"
@@ -2151,9 +1656,6 @@
             "source": "sp.3003001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 165,
             "target": "rp.3003102"
@@ -2164,9 +1666,6 @@
             "source": "sp.3003002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 166,
             "target": "rp.3003102"
@@ -2177,9 +1676,6 @@
             "source": "sp.3003003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 167,
             "target": "rp.3003102"
@@ -2190,9 +1686,6 @@
             "source": "sp.3003004",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 168,
             "target": "rp.3003102"
@@ -2203,9 +1696,6 @@
             "source": "rp.3004101",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 3,
             "id": 169,
             "target": "rp.3004102"
@@ -2216,9 +1706,6 @@
             "source": "sp.3004001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 170,
             "target": "sp.3004002"
@@ -2229,9 +1716,6 @@
             "source": "sp.3004002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 171,
             "target": "sp.3004003"
@@ -2242,9 +1726,6 @@
             "source": "sp.3004003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 172,
             "target": "sp.3004004"
@@ -2255,9 +1736,6 @@
             "source": "sp.3004001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 173,
             "target": "sp.3004004"
@@ -2268,9 +1746,6 @@
             "source": "sp.3004001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 174,
             "target": "rp.3004101"
@@ -2281,9 +1756,6 @@
             "source": "sp.3004002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 175,
             "target": "rp.3004101"
@@ -2294,9 +1766,6 @@
             "source": "sp.3004003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 176,
             "target": "rp.3004101"
@@ -2307,9 +1776,6 @@
             "source": "sp.3004004",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 177,
             "target": "rp.3004101"
@@ -2320,9 +1786,6 @@
             "source": "sp.3004001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 178,
             "target": "rp.3004102"
@@ -2333,9 +1796,6 @@
             "source": "sp.3004002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 179,
             "target": "rp.3004102"
@@ -2346,9 +1806,6 @@
             "source": "sp.3004003",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 180,
             "target": "rp.3004102"
@@ -2359,9 +1816,6 @@
             "source": "sp.3004004",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 181,
             "target": "rp.3004102"
@@ -2372,9 +1826,6 @@
             "source": "rp.3005101",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 1,
             "id": 182,
             "target": "rp.3005102"
@@ -2385,9 +1836,6 @@
             "source": "sp.3005001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 183,
             "target": "sp.3005002"
@@ -2398,9 +1846,6 @@
             "source": "sp.3005002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 184,
             "target": "sp.3005003"
@@ -2411,9 +1856,6 @@
             "source": "sp.3005003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 185,
             "target": "sp.3005004"
@@ -2424,9 +1866,6 @@
             "source": "sp.3005001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 186,
             "target": "sp.3005004"
@@ -2437,9 +1876,6 @@
             "source": "sp.3005001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 187,
             "target": "rp.3005101"
@@ -2450,9 +1886,6 @@
             "source": "sp.3005002",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 188,
             "target": "rp.3005101"
@@ -2463,9 +1896,6 @@
             "source": "sp.3005003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 189,
             "target": "rp.3005101"
@@ -2476,9 +1906,6 @@
             "source": "sp.3005004",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 190,
             "target": "rp.3005101"
@@ -2489,9 +1916,6 @@
             "source": "sp.3005001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 191,
             "target": "rp.3005102"
@@ -2502,9 +1926,6 @@
             "source": "sp.3005002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 192,
             "target": "rp.3005102"
@@ -2515,9 +1936,6 @@
             "source": "sp.3005003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 193,
             "target": "rp.3005102"
@@ -2528,9 +1946,6 @@
             "source": "sp.3005004",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 194,
             "target": "rp.3005102"
@@ -2541,9 +1956,6 @@
             "source": "rp.4001101",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 1,
             "id": 195,
             "target": "rp.4001102"
@@ -2554,9 +1966,6 @@
             "source": "sp.4001001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 196,
             "target": "sp.4001002"
@@ -2567,9 +1976,6 @@
             "source": "sp.4001002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 197,
             "target": "sp.4001003"
@@ -2580,9 +1986,6 @@
             "source": "sp.4001003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 198,
             "target": "sp.4001004"
@@ -2593,9 +1996,6 @@
             "source": "sp.4001001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 199,
             "target": "sp.4001004"
@@ -2606,9 +2006,6 @@
             "source": "sp.4001001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 200,
             "target": "rp.4001101"
@@ -2619,9 +2016,6 @@
             "source": "sp.4001002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 201,
             "target": "rp.4001101"
@@ -2632,9 +2026,6 @@
             "source": "sp.4001003",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 202,
             "target": "rp.4001101"
@@ -2645,9 +2036,6 @@
             "source": "sp.4001004",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 203,
             "target": "rp.4001101"
@@ -2658,9 +2046,6 @@
             "source": "sp.4001001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 204,
             "target": "rp.4001102"
@@ -2671,9 +2056,6 @@
             "source": "sp.4001002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 205,
             "target": "rp.4001102"
@@ -2684,9 +2066,6 @@
             "source": "sp.4001003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 206,
             "target": "rp.4001102"
@@ -2697,9 +2076,6 @@
             "source": "sp.4001004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 207,
             "target": "rp.4001102"
@@ -2710,9 +2086,6 @@
             "source": "rp.4002101",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 1,
             "id": 208,
             "target": "rp.4002102"
@@ -2723,9 +2096,6 @@
             "source": "sp.4002001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 209,
             "target": "sp.4002002"
@@ -2736,9 +2106,6 @@
             "source": "sp.4002002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 210,
             "target": "sp.4002003"
@@ -2749,9 +2116,6 @@
             "source": "sp.4002003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 211,
             "target": "sp.4002004"
@@ -2762,9 +2126,6 @@
             "source": "sp.4002001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 212,
             "target": "sp.4002004"
@@ -2775,9 +2136,6 @@
             "source": "sp.4002001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 213,
             "target": "rp.4002101"
@@ -2788,9 +2146,6 @@
             "source": "sp.4002002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 214,
             "target": "rp.4002101"
@@ -2801,9 +2156,6 @@
             "source": "sp.4002003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 215,
             "target": "rp.4002101"
@@ -2814,9 +2166,6 @@
             "source": "sp.4002004",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 216,
             "target": "rp.4002101"
@@ -2827,9 +2176,6 @@
             "source": "sp.4002001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 217,
             "target": "rp.4002102"
@@ -2840,9 +2186,6 @@
             "source": "sp.4002002",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 218,
             "target": "rp.4002102"
@@ -2853,9 +2196,6 @@
             "source": "sp.4002003",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 219,
             "target": "rp.4002102"
@@ -2866,9 +2206,6 @@
             "source": "sp.4002004",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 220,
             "target": "rp.4002102"
@@ -2879,9 +2216,6 @@
             "source": "rp.4003101",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 1,
             "id": 221,
             "target": "rp.4003102"
@@ -2892,9 +2226,6 @@
             "source": "sp.4003001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 222,
             "target": "sp.4003002"
@@ -2905,9 +2236,6 @@
             "source": "sp.4003002",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 223,
             "target": "sp.4003003"
@@ -2918,9 +2246,6 @@
             "source": "sp.4003003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 224,
             "target": "sp.4003004"
@@ -2931,9 +2256,6 @@
             "source": "sp.4003001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 225,
             "target": "sp.4003004"
@@ -2944,9 +2266,6 @@
             "source": "sp.4003001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 226,
             "target": "rp.4003101"
@@ -2957,9 +2276,6 @@
             "source": "sp.4003002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 227,
             "target": "rp.4003101"
@@ -2970,9 +2286,6 @@
             "source": "sp.4003003",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 228,
             "target": "rp.4003101"
@@ -2983,9 +2296,6 @@
             "source": "sp.4003004",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 229,
             "target": "rp.4003101"
@@ -2996,9 +2306,6 @@
             "source": "sp.4003001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 230,
             "target": "rp.4003102"
@@ -3009,9 +2316,6 @@
             "source": "sp.4003002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 231,
             "target": "rp.4003102"
@@ -3022,9 +2326,6 @@
             "source": "sp.4003003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 232,
             "target": "rp.4003102"
@@ -3035,9 +2336,6 @@
             "source": "sp.4003004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 233,
             "target": "rp.4003102"
@@ -3048,9 +2346,6 @@
             "source": "rp.4004101",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 3,
             "id": 234,
             "target": "rp.4004102"
@@ -3061,9 +2356,6 @@
             "source": "sp.4004001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 235,
             "target": "sp.4004002"
@@ -3074,9 +2366,6 @@
             "source": "sp.4004002",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 236,
             "target": "sp.4004003"
@@ -3087,9 +2376,6 @@
             "source": "sp.4004003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 237,
             "target": "sp.4004004"
@@ -3100,9 +2386,6 @@
             "source": "sp.4004001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 238,
             "target": "sp.4004004"
@@ -3113,9 +2396,6 @@
             "source": "sp.4004001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 239,
             "target": "rp.4004101"
@@ -3126,9 +2406,6 @@
             "source": "sp.4004002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 240,
             "target": "rp.4004101"
@@ -3139,9 +2416,6 @@
             "source": "sp.4004003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 241,
             "target": "rp.4004101"
@@ -3152,9 +2426,6 @@
             "source": "sp.4004004",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 242,
             "target": "rp.4004101"
@@ -3165,9 +2436,6 @@
             "source": "sp.4004001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 243,
             "target": "rp.4004102"
@@ -3178,9 +2446,6 @@
             "source": "sp.4004002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 244,
             "target": "rp.4004102"
@@ -3191,9 +2456,6 @@
             "source": "sp.4004003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 245,
             "target": "rp.4004102"
@@ -3204,9 +2466,6 @@
             "source": "sp.4004004",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 246,
             "target": "rp.4004102"
@@ -3217,9 +2476,6 @@
             "source": "rp.4005101",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 2,
             "id": 247,
             "target": "rp.4005102"
@@ -3230,9 +2486,6 @@
             "source": "sp.4005001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 248,
             "target": "sp.4005002"
@@ -3243,9 +2496,6 @@
             "source": "sp.4005002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 249,
             "target": "sp.4005003"
@@ -3256,9 +2506,6 @@
             "source": "sp.4005003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 250,
             "target": "sp.4005004"
@@ -3269,9 +2516,6 @@
             "source": "sp.4005001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 251,
             "target": "sp.4005004"
@@ -3282,9 +2526,6 @@
             "source": "sp.4005001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 252,
             "target": "rp.4005101"
@@ -3295,9 +2536,6 @@
             "source": "sp.4005002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 253,
             "target": "rp.4005101"
@@ -3308,9 +2546,6 @@
             "source": "sp.4005003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 254,
             "target": "rp.4005101"
@@ -3321,9 +2556,6 @@
             "source": "sp.4005004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 255,
             "target": "rp.4005101"
@@ -3334,9 +2566,6 @@
             "source": "sp.4005001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 256,
             "target": "rp.4005102"
@@ -3347,9 +2576,6 @@
             "source": "sp.4005002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 257,
             "target": "rp.4005102"
@@ -3360,9 +2586,6 @@
             "source": "sp.4005003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 258,
             "target": "rp.4005102"
@@ -3373,9 +2596,6 @@
             "source": "sp.4005004",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 259,
             "target": "rp.4005102"
@@ -3386,9 +2606,6 @@
             "source": "rp.5001101",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 1,
             "id": 260,
             "target": "rp.5001102"
@@ -3399,9 +2616,6 @@
             "source": "sp.5001001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 261,
             "target": "sp.5001002"
@@ -3412,9 +2626,6 @@
             "source": "sp.5001002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 262,
             "target": "sp.5001003"
@@ -3425,9 +2636,6 @@
             "source": "sp.5001003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 263,
             "target": "sp.5001004"
@@ -3438,9 +2646,6 @@
             "source": "sp.5001001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 264,
             "target": "sp.5001004"
@@ -3451,9 +2656,6 @@
             "source": "sp.5001001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 265,
             "target": "rp.5001101"
@@ -3464,9 +2666,6 @@
             "source": "sp.5001002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 266,
             "target": "rp.5001101"
@@ -3477,9 +2676,6 @@
             "source": "sp.5001003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 267,
             "target": "rp.5001101"
@@ -3490,9 +2686,6 @@
             "source": "sp.5001004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 268,
             "target": "rp.5001101"
@@ -3503,9 +2696,6 @@
             "source": "sp.5001001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 269,
             "target": "rp.5001102"
@@ -3516,9 +2706,6 @@
             "source": "sp.5001002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 270,
             "target": "rp.5001102"
@@ -3529,9 +2716,6 @@
             "source": "sp.5001003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 271,
             "target": "rp.5001102"
@@ -3542,9 +2726,6 @@
             "source": "sp.5001004",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 272,
             "target": "rp.5001102"
@@ -3555,9 +2736,6 @@
             "source": "rp.5002101",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 2,
             "id": 273,
             "target": "rp.5002102"
@@ -3568,9 +2746,6 @@
             "source": "sp.5002001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 274,
             "target": "sp.5002002"
@@ -3581,9 +2756,6 @@
             "source": "sp.5002002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 275,
             "target": "sp.5002003"
@@ -3594,9 +2766,6 @@
             "source": "sp.5002003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 276,
             "target": "sp.5002004"
@@ -3607,9 +2776,6 @@
             "source": "sp.5002001",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 277,
             "target": "sp.5002004"
@@ -3620,9 +2786,6 @@
             "source": "sp.5002001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 278,
             "target": "rp.5002101"
@@ -3633,9 +2796,6 @@
             "source": "sp.5002002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 279,
             "target": "rp.5002101"
@@ -3646,9 +2806,6 @@
             "source": "sp.5002003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 280,
             "target": "rp.5002101"
@@ -3659,9 +2816,6 @@
             "source": "sp.5002004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 281,
             "target": "rp.5002101"
@@ -3672,9 +2826,6 @@
             "source": "sp.5002001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 282,
             "target": "rp.5002102"
@@ -3685,9 +2836,6 @@
             "source": "sp.5002002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 283,
             "target": "rp.5002102"
@@ -3698,9 +2846,6 @@
             "source": "sp.5002003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 284,
             "target": "rp.5002102"
@@ -3711,9 +2856,6 @@
             "source": "sp.5002004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 285,
             "target": "rp.5002102"
@@ -3724,9 +2866,6 @@
             "source": "rp.5003101",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 1,
             "id": 286,
             "target": "rp.5003102"
@@ -3737,9 +2876,6 @@
             "source": "sp.5003001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 287,
             "target": "sp.5003002"
@@ -3750,9 +2886,6 @@
             "source": "sp.5003002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 288,
             "target": "sp.5003003"
@@ -3763,9 +2896,6 @@
             "source": "sp.5003003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 3,
             "id": 289,
             "target": "sp.5003004"
@@ -3776,9 +2906,6 @@
             "source": "sp.5003001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 290,
             "target": "sp.5003004"
@@ -3789,9 +2916,6 @@
             "source": "sp.5003001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 291,
             "target": "rp.5003101"
@@ -3802,9 +2926,6 @@
             "source": "sp.5003002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 292,
             "target": "rp.5003101"
@@ -3815,9 +2936,6 @@
             "source": "sp.5003003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 293,
             "target": "rp.5003101"
@@ -3828,9 +2946,6 @@
             "source": "sp.5003004",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 294,
             "target": "rp.5003101"
@@ -3841,9 +2956,6 @@
             "source": "sp.5003001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 295,
             "target": "rp.5003102"
@@ -3854,9 +2966,6 @@
             "source": "sp.5003002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 296,
             "target": "rp.5003102"
@@ -3867,9 +2976,6 @@
             "source": "sp.5003003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 297,
             "target": "rp.5003102"
@@ -3880,9 +2986,6 @@
             "source": "sp.5003004",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 298,
             "target": "rp.5003102"
@@ -3893,9 +2996,6 @@
             "source": "rp.5004101",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 3,
             "id": 299,
             "target": "rp.5004102"
@@ -3906,9 +3006,6 @@
             "source": "sp.5004001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 300,
             "target": "sp.5004002"
@@ -3919,9 +3016,6 @@
             "source": "sp.5004002",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 301,
             "target": "sp.5004003"
@@ -3932,9 +3026,6 @@
             "source": "sp.5004003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 302,
             "target": "sp.5004004"
@@ -3945,9 +3036,6 @@
             "source": "sp.5004001",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 303,
             "target": "sp.5004004"
@@ -3958,9 +3046,6 @@
             "source": "sp.5004001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 304,
             "target": "rp.5004101"
@@ -3971,9 +3056,6 @@
             "source": "sp.5004002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 305,
             "target": "rp.5004101"
@@ -3984,9 +3066,6 @@
             "source": "sp.5004003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 306,
             "target": "rp.5004101"
@@ -3997,9 +3076,6 @@
             "source": "sp.5004004",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 307,
             "target": "rp.5004101"
@@ -4010,9 +3086,6 @@
             "source": "sp.5004001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 308,
             "target": "rp.5004102"
@@ -4023,9 +3096,6 @@
             "source": "sp.5004002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 309,
             "target": "rp.5004102"
@@ -4036,9 +3106,6 @@
             "source": "sp.5004003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 310,
             "target": "rp.5004102"
@@ -4049,9 +3116,6 @@
             "source": "sp.5004004",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 311,
             "target": "rp.5004102"
@@ -4062,9 +3126,6 @@
             "source": "rp.5005101",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "vpn"
-            },
             "width": 3,
             "id": 312,
             "target": "rp.5005102"
@@ -4075,9 +3136,6 @@
             "source": "sp.5005001",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 313,
             "target": "sp.5005002"
@@ -4088,9 +3146,6 @@
             "source": "sp.5005002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 1,
             "id": 314,
             "target": "sp.5005003"
@@ -4101,9 +3156,6 @@
             "source": "sp.5005003",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 315,
             "target": "sp.5005004"
@@ -4114,9 +3166,6 @@
             "source": "sp.5005001",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "ethernet"
-            },
             "width": 2,
             "id": 316,
             "target": "sp.5005004"
@@ -4127,9 +3176,6 @@
             "source": "sp.5005001",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 317,
             "target": "rp.5005101"
@@ -4140,9 +3186,6 @@
             "source": "sp.5005002",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 3,
             "id": 318,
             "target": "rp.5005101"
@@ -4153,9 +3196,6 @@
             "source": "sp.5005003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 319,
             "target": "rp.5005101"
@@ -4166,9 +3206,6 @@
             "source": "sp.5005004",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 320,
             "target": "rp.5005101"
@@ -4179,9 +3216,6 @@
             "source": "sp.5005001",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 321,
             "target": "rp.5005102"
@@ -4192,9 +3226,6 @@
             "source": "sp.5005002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 1,
             "id": 322,
             "target": "rp.5005102"
@@ -4205,9 +3236,6 @@
             "source": "sp.5005003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 323,
             "target": "rp.5005102"
@@ -4218,9 +3246,6 @@
             "source": "sp.5005004",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "wireless"
-            },
             "width": 2,
             "id": 324,
             "target": "rp.5005102"
@@ -4231,9 +3256,6 @@
             "source": "sp.1001002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 1,
             "id": 325,
             "target": "sp.1002004"
@@ -4244,9 +3266,6 @@
             "source": "sp.1001003",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 326,
             "target": "sp.2001001"
@@ -4257,9 +3276,6 @@
             "source": "sp.1002002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 1,
             "id": 327,
             "target": "sp.1003004"
@@ -4270,9 +3286,6 @@
             "source": "sp.1002003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 328,
             "target": "sp.2002001"
@@ -4283,9 +3296,6 @@
             "source": "sp.1003002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 1,
             "id": 329,
             "target": "sp.1004004"
@@ -4296,9 +3306,6 @@
             "source": "sp.1003003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 330,
             "target": "sp.2003001"
@@ -4309,9 +3316,6 @@
             "source": "sp.1004002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 331,
             "target": "sp.1005004"
@@ -4322,9 +3326,6 @@
             "source": "sp.1004003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 1,
             "id": 332,
             "target": "sp.2004001"
@@ -4335,9 +3336,6 @@
             "source": "sp.2001002",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 1,
             "id": 333,
             "target": "sp.2002004"
@@ -4348,9 +3346,6 @@
             "source": "sp.2001003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 334,
             "target": "sp.3001001"
@@ -4361,9 +3356,6 @@
             "source": "sp.2002002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 335,
             "target": "sp.2003004"
@@ -4374,9 +3366,6 @@
             "source": "sp.2002003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 336,
             "target": "sp.3002001"
@@ -4387,9 +3376,6 @@
             "source": "sp.2003002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 337,
             "target": "sp.2004004"
@@ -4400,9 +3386,6 @@
             "source": "sp.2003003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 1,
             "id": 338,
             "target": "sp.3003001"
@@ -4413,9 +3396,6 @@
             "source": "sp.2004002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 339,
             "target": "sp.2005004"
@@ -4426,9 +3406,6 @@
             "source": "sp.2004003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 340,
             "target": "sp.3004001"
@@ -4439,9 +3416,6 @@
             "source": "sp.3001002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 341,
             "target": "sp.3002004"
@@ -4452,9 +3426,6 @@
             "source": "sp.3001003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 342,
             "target": "sp.4001001"
@@ -4465,9 +3436,6 @@
             "source": "sp.3002002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 343,
             "target": "sp.3003004"
@@ -4478,9 +3446,6 @@
             "source": "sp.3002003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 344,
             "target": "sp.4002001"
@@ -4491,9 +3456,6 @@
             "source": "sp.3003002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 345,
             "target": "sp.3004004"
@@ -4504,9 +3466,6 @@
             "source": "sp.3003003",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 346,
             "target": "sp.4003001"
@@ -4517,9 +3476,6 @@
             "source": "sp.3004002",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 1,
             "id": 347,
             "target": "sp.3005004"
@@ -4530,9 +3486,6 @@
             "source": "sp.3004003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 348,
             "target": "sp.4004001"
@@ -4543,9 +3496,6 @@
             "source": "sp.4001002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 349,
             "target": "sp.4002004"
@@ -4556,9 +3506,6 @@
             "source": "sp.4001003",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 350,
             "target": "sp.5001001"
@@ -4569,9 +3516,6 @@
             "source": "sp.4002002",
             "opacity": 0.4,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 351,
             "target": "sp.4003004"
@@ -4582,9 +3526,6 @@
             "source": "sp.4002003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 352,
             "target": "sp.5002001"
@@ -4595,9 +3536,6 @@
             "source": "sp.4003002",
             "opacity": 0.6,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 353,
             "target": "sp.4004004"
@@ -4608,9 +3546,6 @@
             "source": "sp.4003003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 354,
             "target": "sp.5003001"
@@ -4621,9 +3556,6 @@
             "source": "sp.4004002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 355,
             "target": "sp.4005004"
@@ -4634,9 +3566,6 @@
             "source": "sp.4004003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 356,
             "target": "sp.5004001"
@@ -4647,9 +3576,6 @@
             "source": "sp.1005003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 1,
             "id": 357,
             "target": "sp.2005001"
@@ -4660,9 +3586,6 @@
             "source": "sp.2005003",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 1,
             "id": 358,
             "target": "sp.3005001"
@@ -4673,9 +3596,6 @@
             "source": "sp.3005003",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 359,
             "target": "sp.4005001"
@@ -4686,9 +3606,6 @@
             "source": "sp.4005003",
             "opacity": 0.5,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 360,
             "target": "sp.5005001"
@@ -4699,9 +3616,6 @@
             "source": "sp.5001002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 3,
             "id": 361,
             "target": "sp.5002004"
@@ -4712,9 +3626,6 @@
             "source": "sp.5002002",
             "opacity": 0.9,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 1,
             "id": 362,
             "target": "sp.5003004"
@@ -4725,9 +3636,6 @@
             "source": "sp.5003002",
             "opacity": 0.8,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 1,
             "id": 363,
             "target": "sp.5004004"
@@ -4738,9 +3646,6 @@
             "source": "sp.5004002",
             "opacity": 0.7,
             "style": 0,
-            "properties": {
-                "type": "fiber"
-            },
             "width": 2,
             "id": 364,
             "target": "sp.5005004"
@@ -4753,9 +3658,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "red",
             "radius": 5
         },
         {
@@ -4764,9 +3667,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "green",
             "radius": 5
         },
         {
@@ -4775,9 +3676,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "blue",
             "radius": 5
         },
         {
@@ -4786,9 +3685,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "#000",
             "radius": 5
         },
         {
@@ -4797,9 +3694,7 @@
             "shape": 0,
             "color": 3,
             "opacity": 0.5,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "#888",
             "radius": 5
         },
         {
@@ -4808,9 +3703,7 @@
             "shape": 0,
             "color": 3,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4819,9 +3712,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4830,9 +3721,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4841,9 +3730,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4852,9 +3739,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4863,9 +3748,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4874,9 +3757,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4885,9 +3766,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4896,9 +3775,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4907,9 +3784,7 @@
             "shape": 0,
             "color": 3,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4918,9 +3793,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4929,9 +3802,7 @@
             "shape": 0,
             "color": 3,
             "opacity": 0.6,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4940,9 +3811,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.6,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4951,9 +3820,7 @@
             "shape": 0,
             "color": 3,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4962,9 +3829,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4973,9 +3838,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4984,9 +3847,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -4995,9 +3856,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5006,9 +3865,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.5,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5017,9 +3874,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5028,9 +3883,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5039,9 +3892,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5050,9 +3901,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5061,9 +3910,7 @@
             "shape": 0,
             "color": 12,
             "opacity": 0.9,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5072,9 +3919,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.8,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5083,9 +3928,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5094,9 +3937,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5105,9 +3946,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5116,9 +3955,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5127,9 +3964,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.8,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5138,9 +3973,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5149,9 +3982,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5160,9 +3991,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5171,9 +4000,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5182,9 +4009,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5193,9 +4018,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.6,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5204,9 +4027,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5215,9 +4036,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5226,9 +4045,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5237,9 +4054,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5248,9 +4063,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5259,9 +4072,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.4,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5270,9 +4081,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.8,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5281,9 +4090,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5292,9 +4099,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5303,9 +4108,7 @@
             "shape": 0,
             "color": 3,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5314,9 +4117,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5325,9 +4126,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.9,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5336,9 +4135,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5347,9 +4144,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5358,9 +4153,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5369,9 +4162,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5380,9 +4171,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5391,9 +4180,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5402,9 +4189,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5413,9 +4198,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5424,9 +4207,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5435,9 +4216,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5446,9 +4225,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5457,9 +4234,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.8,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5468,9 +4243,7 @@
             "shape": 0,
             "color": 3,
             "opacity": 0.9,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5479,9 +4252,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5490,9 +4261,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5501,9 +4270,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5512,9 +4279,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5523,9 +4288,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5534,9 +4297,7 @@
             "shape": 0,
             "color": 3,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5545,9 +4306,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5556,9 +4315,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5567,9 +4324,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5578,9 +4333,7 @@
             "shape": 0,
             "color": 3,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5589,9 +4342,7 @@
             "shape": 0,
             "color": 12,
             "opacity": 0.4,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5600,9 +4351,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.5,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5611,9 +4360,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5622,9 +4369,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5633,9 +4378,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5644,9 +4387,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5655,9 +4396,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.6,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5666,9 +4405,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.6,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5677,9 +4414,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5688,9 +4423,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5699,9 +4432,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5710,9 +4441,7 @@
             "shape": 0,
             "color": 3,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5721,9 +4450,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.8,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5732,9 +4459,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5743,9 +4468,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5754,9 +4477,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5765,9 +4486,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5776,9 +4495,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5787,9 +4504,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.9,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5798,9 +4513,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.6,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5809,9 +4522,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5820,9 +4531,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5831,9 +4540,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5842,9 +4549,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5853,9 +4558,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.6,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5864,9 +4567,7 @@
             "shape": 0,
             "color": 12,
             "opacity": 0.9,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5875,9 +4576,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5886,9 +4585,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5897,9 +4594,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5908,9 +4603,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5919,9 +4612,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.5,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5930,9 +4621,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5941,9 +4630,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5952,9 +4639,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5963,9 +4648,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5974,9 +4657,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5985,9 +4666,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.5,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -5996,9 +4675,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.9,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6007,9 +4684,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6018,9 +4693,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6029,9 +4702,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6040,9 +4711,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6051,9 +4720,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.6,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6062,9 +4729,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.5,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6073,9 +4738,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6084,9 +4747,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6095,9 +4756,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6106,9 +4765,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6117,9 +4774,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.9,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6128,9 +4783,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.8,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6139,9 +4792,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6150,9 +4801,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6161,9 +4810,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6172,9 +4819,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6183,9 +4828,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.8,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6194,9 +4837,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.9,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6205,9 +4846,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6216,9 +4855,7 @@
             "shape": 0,
             "color": 3,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6227,9 +4864,7 @@
             "shape": 0,
             "color": 11,
             "opacity": 0.4,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6238,9 +4873,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6249,9 +4882,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.5,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6260,9 +4891,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.4,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6271,9 +4900,7 @@
             "shape": 0,
             "color": 2,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6282,9 +4909,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6293,9 +4918,7 @@
             "shape": 0,
             "color": 7,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6304,9 +4927,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.9,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6315,9 +4936,7 @@
             "shape": 0,
             "color": 8,
             "opacity": 0.5,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6326,9 +4945,7 @@
             "shape": 0,
             "color": 10,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6337,9 +4954,7 @@
             "shape": 0,
             "color": 9,
             "opacity": 0.8,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6348,9 +4963,7 @@
             "shape": 0,
             "color": 6,
             "opacity": 0.7,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6359,9 +4972,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.6,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6370,9 +4981,7 @@
             "shape": 0,
             "color": 3,
             "opacity": 0.5,
-            "properties": {
-                "gateway": true
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6381,9 +4990,7 @@
             "shape": 0,
             "color": 4,
             "opacity": 0.5,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         },
         {
@@ -6392,9 +4999,7 @@
             "shape": 0,
             "color": 5,
             "opacity": 0.7,
-            "properties": {
-                "gateway": false
-            },
+            "labelcolor": "black",
             "radius": 5
         }
     ]
