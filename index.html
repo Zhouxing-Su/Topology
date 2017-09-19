@@ -66,9 +66,9 @@
     <tr>
       <td>
         <div id="data">
-          <p id="vertix">节点数：</p>
-          <p id="edge">边数：</p>
-          <p id="scale">缩放比例：100%</p>
+          <p id="vertix">节点数: </p>
+          <p id="edge">边数: </p>
+          <p id="scale">缩放比例: 100%</p>
           <button id="toggleBtn">标签显隐</button>
           <button id="saveAsPng">导出图片</button>
           <button id="showHelp">显示帮助</button>
@@ -76,85 +76,89 @@
             <b>Node properties</b><br />
             <p><span>Node'ID: </span><span id="NID">0</span></p>
             <label title="change node's color.">
-                color：
+							color: 
                 <output id="node_colorSliderOutput">1</output><br />
-                <input id="node_colorSliderInput" type="range" min="1" max="20" value="1" step="1" class="form-input" oninput="d3.select('#node_colorSliderOutput').text(value);">
-              </label><br />
+							<input id="node_colorSliderInput" type="range" min="1" max="20" value="1" step="1" class="form-input" oninput="d3.select('#node_colorSliderOutput').text(value);">
+						</label>
+            <br />
             <label title="change node's radius.">
-                radius：
+							radius: 
                 <output id="node_radiusSliderOutput">1</output><br />
-                <input id="node_radiusSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#node_radiusSliderOutput').text(value);">
-              </label>
+							<input id="node_radiusSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#node_radiusSliderOutput').text(value);">
+						</label>
             <label title="change node's opacity.">
-                opacity：
+							opacity: 
                 <output id="node_opacitySliderOutput">0</output><br />
-                <input id="node_opacitySliderInput" type="range" min="0" max="1" value="0" step="0.1" oninput="d3.select('#node_opacitySliderOutput').text(value);">
-              </label>
+							<input id="node_opacitySliderInput" type="range" min="0" max="1" value="0" step="0.1" oninput="d3.select('#node_opacitySliderOutput').text(value);">
+						</label>
           </div>
           <div class="force">
             <b>Link properties</b><br />
             <p><span>Link'ID: </span><span id="LID">0</span></p>
             <label title="change link's color.">
-                color：
+							color: 
                 <output id="link_colorSliderOutput">1</output><br />
-                <input id="link_colorSliderInput" type="range" min="1" max="20" value="1" step="1" class="form-input" oninput="d3.select('#link_colorSliderOutput').text(value);">
-              </label><br />
+							<input id="link_colorSliderInput" type="range" min="1" max="20" value="1" step="1" class="form-input" oninput="d3.select('#link_colorSliderOutput').text(value);">
+						</label>
+            <br />
             <label title="change link's width.">
-                width：
+							width: 
                 <output id="link_widthSliderOutput">1</output><br />
-                <input id="link_widthSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#link_widthSliderOutput').text(value);">
-              </label>
+							<input id="link_widthSliderInput" type="range" min="1" max="20" value="1" step="1" oninput="d3.select('#link_widthSliderOutput').text(value);">
+						</label>
             <label title="change link's opacity.">
-                opacity：
+							opacity: 
                 <output id="link_opacitySliderOutput">0</output><br />
-                <input id="link_opacitySliderInput" type="range" min="0" max="1" value="0" step="0.1" oninput="d3.select('#link_opacitySliderOutput').text(value);">
-              </label>
+							<input id="link_opacitySliderInput" type="range" min="0" max="1" value="0" step="0.1" oninput="d3.select('#link_opacitySliderOutput').text(value);">
+						</label>
           </div>
 
           <div class="force">
             <b>Simulation properties</b><br />
             <label title="change strength of Simulation'force">
-                strength
+							strength
                 <output id="link_strengthSliderOutput">1</output>
-                <input id="link_strengthSliderInput" type="range" min="0.3" max="1" value="1" step="0.1" oninput="d3.select('#link_strengthSliderOutput').text(value);">
-              </label>
+							<input id="link_strengthSliderInput" type="range" min="0.3" max="1" value="1" step="0.1" oninput="d3.select('#link_strengthSliderOutput').text(value);">
+						</label>
             <label title="change distance of Simulation'force">
-                log10(distance)
+							log10(distance)
                 <output id="link_distanceSliderOutput">0</output>
-                <input id="link_distanceSliderInput" type="range" min="-1" max="1" value="0" step="0.1" oninput="d3.select('#link_distanceSliderOutput').text(value);">
-              </label>
+							<input id="link_distanceSliderInput" type="range" min="-1" max="1" value="0" step="0.1" oninput="d3.select('#link_distanceSliderOutput').text(value);">
+						</label>
             <label title="change iterations of Simulation'force">
-                iterations
+							iterations
                 <output id="link_iterationsSliderOutput">20</output>
-                <input id="link_iterationsSliderInput" type="range" min="10" max="50" value="20" step="1" oninput="d3.select('#link_iterationsSliderOutput').text(value);">
-              </label>
+							<input id="link_iterationsSliderInput" type="range" min="10" max="50" value="20" step="1" oninput="d3.select('#link_iterationsSliderOutput').text(value);">
+						</label>
           </div>
 
           <div class="force">
             <b>forceX properties</b><br />
             <label>
-                strength
+							strength
                 <output id="forceX_StrengthSliderOutput">0.4</output>
-                <input id="forceX_StrengthSliderInput" type="range" min="0" max="1" value="0.4" step="0.01" oninput="d3.select('#forceX_StrengthSliderOutput').text(value);">
-              </label><br />
+							<input id="forceX_StrengthSliderInput" type="range" min="0" max="1" value="0.4" step="0.01" oninput="d3.select('#forceX_StrengthSliderOutput').text(value);">
+						</label>
+            <br />
             <label title="The X location that the force will push the nodes to (NOTE: This demo multiplies by the svg width)">
-                x
+							x
                 <output id="forceX_XSliderOutput">0.5</output><br />
-                <input id="forceX_XSliderInput" type="range" min="0" max="1" value="0.5" step="0.01" oninput="d3.select('#forceX_XSliderOutput').text(value);">
-              </label>
+							<input id="forceX_XSliderInput" type="range" min="0" max="1" value="0.5" step="0.01" oninput="d3.select('#forceX_XSliderOutput').text(value);">
+						</label>
           </div>
           <div class="force">
             <b>forceY properties</b><br />
             <label>
-                strength
+							strength
                 <output id="forceY_StrengthSliderOutput">0.4</output>
-                <input id="forceY_StrengthSliderInput" type="range" min="0" max="1" value="0.4" step="0.01" oninput="d3.select('#forceY_StrengthSliderOutput').text(value);">
-              </label><br />
+							<input id="forceY_StrengthSliderInput" type="range" min="0" max="1" value="0.4" step="0.01" oninput="d3.select('#forceY_StrengthSliderOutput').text(value);">
+						</label>
+            <br />
             <label title="The Y location that the force will push the nodes to (NOTE: This demo multiplies by the svg width)">
-                y
+							y
                 <output id="forceY_YSliderOutput">0.5</output><br />
-                <input id="forceY_YSliderInput" type="range" min="0" max="1" value="0.5" step="0.01" oninput="d3.select('#forceY_YSliderOutput').text(value);">
-              </label>
+							<input id="forceY_YSliderInput" type="range" min="0" max="1" value="0.5" step="0.01" oninput="d3.select('#forceY_YSliderOutput').text(value);">
+						</label>
           </div>
         </div>
       </td>
@@ -176,7 +180,7 @@
     //文件名
     var jsonFileName;
     //全局点
-    var globalNode;
+    var globalNode = null;
     //全局边
     var globalLink = null;
     //forces的参数
@@ -247,8 +251,8 @@
         nodeById = d3.map(nodes, function (d) { return d.label; });
         links = graph.links;
         //显示节点数和边数
-        d3.select("#vertix").text("节点数：" + nodes.length);
-        d3.select("#edge").text("边数：" + links.length);
+        d3.select("#vertix").text("节点数: " + nodes.length);
+        d3.select("#edge").text("边数: " + links.length);
         links.forEach(function (link) {
           var s = link.source = nodeById.get(link.source),
             t = link.target = nodeById.get(link.target),
@@ -279,7 +283,6 @@
 
     //切换所有标签显示隐藏
     var showAllLabels = false;
-
     function toggleAllLabels() {
       node.selectAll("text").each(function (d) {
         tvlog(d['id']);
@@ -313,6 +316,12 @@
         + "p [字母p]: 暂停迭代\n");
     }
 
+    var symbol = d3.symbol();
+    function generateSymbol(shape, radius) {
+      symbol.type(d3.symbols[shape % d3.symbols.length]).size(radius * 10);
+      return symbol();
+    }
+
     //显示画布内容
     function Display() {
       link = container.selectAll(".link")
@@ -332,25 +341,12 @@
           .on("drag", dragged)
           .on("end", dragended));
 
-      function setShape(d) {
-        console.log("shape=" + d.shape + ", r=" + d.radius);
-        if (d.shape == 1) {
-          return "rect";
-        } else {
-          return "circle";
-        }
-      }
-
-      node.append("circle")
-        // .attr("x", function (d) { return -0.7071 * d.radius; })
-        // .attr("y", function (d) { return -0.7071 * d.radius; })
-        // .attr("width", function (d) { return 1.4142 * d.radius; })
-        // .attr("height", function (d) { return 1.4142 * d.radius; })
-        .attr("r", function (d) { return d.radius; })
-        .attr("opacity", function (d) { return d.opacity; })//设置透明度
+      node.append("path")
+        .attr("d", function (d) { return generateSymbol(d.shape, d.radius); })
+        .attr("opacity", function (d) { return d.opacity; })
         .style("fill", function (d) { return nodeColorMap(d.color); });
+
       //显示节点标签
-      //点是网关颜色为红色
       node.append("text")
         .attr("x", 12)
         .attr("dy", ".35em")
@@ -386,6 +382,21 @@
         // .force('collision', d3.forceCollide().radius(10))
         ;
 
+
+      svg.selectAll(".link")
+        .on("click", function (d) {
+          tvlog(d);
+          globalLink = d3.select(this);
+          d3.select('#LID').text(d[7]);
+          $('#link_colorSliderOutput').val(d[5]);
+          $("#link_colorSliderInput").val(d[5]);
+          $('#link_widthSliderOutput').val(d[3]);
+          $("#link_widthSliderInput").val(d[3]);
+          $('#link_opacitySliderOutput').val(d[6]);
+          $("#link_opacitySliderInput").val(d[6]);
+          tvlog(globalLink);
+        });
+
       function showLabel(d) {
         globalNode = d3.select(this);//获取点击节点
         //打印节点的属性到表格
@@ -399,8 +410,7 @@
         tvlog(globalNode);
         if ($(this).next().is(":hidden")) {
           $(this).next().show();
-        }
-        else {
+        } else {
           $(this).next().hide();
         }
       }
@@ -409,7 +419,7 @@
         $(this).hide();
       }
 
-      node.selectAll("circle")
+      node.selectAll("path")
         .on("click", showLabel);
 
       node.selectAll("text")
@@ -421,45 +431,40 @@
         .on("click", toggleAllLabels);
 
       //缩放
+      function zoomed() {
+        container.attr("transform", d3.event.transform);
+        d3.select("#scale").text("缩放比例: " + parseInt(d3.event.transform.k * 100) + "%");
+      }
       zoom = d3.zoom()
         .scaleExtent([0.2, 100])
         // .translateExtent([[0, 0], [svg.attr("width"), svg.attr("height")]])
         // .extent([[0, 0], [svg.attr("width"), svg.attr("height")]])
         .on("zoom", zoomed);
-
       svg.call(zoom);
 
-      function zoomed() {
-        container.attr("transform", d3.event.transform);
-        d3.select("#scale").text("缩放比例：" + parseInt(d3.event.transform.k * 100) + "%");
-      }
-
-      /*修改节点、边属性*/
+      //修改节点和边的属性
       //点的颜色
       d3.select("#node_colorSliderInput")
         .on("change", function () {
           tvlog($("#node_colorSliderOutput").val() + " c:" + d3.select('#NID').text());
-          if (d3.select('#NID').text() != 0) {
+          if (globalNode) {
             globalNode.style("fill", function () { return nodeColorMap($("#node_colorSliderOutput").val()); });
           }
         });
       //点的半径
       d3.select("#node_radiusSliderInput")
         .on("change", function () {
-          if (d3.select('#NID').text() != 0) {
-            globalNode.attr("r", function () { return $("#node_radiusSliderOutput").val(); });
+          if (globalNode) {
+            globalNode.attr("d", function (d) { return generateSymbol(d.shape, $("#node_radiusSliderOutput").val()); });
           }
         });
       //点透明度
       d3.select("#node_opacitySliderInput")
         .on("change", function () {
-          if (d3.select('#NID').text() != 0) {
+          if (globalNode) {
             globalNode.attr("opacity", function () { return $("#node_opacitySliderOutput").val(); });
-            // cur_g = node.select(function() { return globalNode.parentNode; });
-            tvlog(cur_g);
           }
         });
-      node_opacitySliderInput
       //边的颜色
       d3.select("#link_colorSliderInput")
         .on("change", function () {
@@ -480,20 +485,6 @@
           if (globalLink) {
             globalLink.attr("opacity", function () { return $("#link_opacitySliderOutput").val(); });
           }
-        });
-
-      svg.selectAll(".link")
-        .on("click", function (d) {
-          tvlog(d);
-          globalLink = d3.select(this);
-          d3.select('#LID').text(d[7]);
-          $('#link_colorSliderOutput').val(d[5]);
-          $("#link_colorSliderInput").val(d[5]);
-          $('#link_widthSliderOutput').val(d[3]);
-          $("#link_widthSliderInput").val(d[3]);
-          $('#link_opacitySliderOutput').val(d[6]);
-          $("#link_opacitySliderInput").val(d[6]);
-          tvlog(globalLink);
         });
 
       /*修改Simulation属性*/
