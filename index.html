@@ -414,9 +414,9 @@
     function Simulation() {
       simulation = d3.forceSimulation()
         .force("link", d3.forceLink().distance(getDist).strength(1).iterations(20))
-        .force("charge", d3.forceManyBody().strength(-400))
+        .force("charge", d3.forceManyBody().strength(-200))
+        .force('collision', d3.forceCollide().radius(10).iterations(10))
         // .force("center", d3.forceCenter(svgWidth / 2, svgHeight / 2))
-        // .force('collision', d3.forceCollide().radius(10))
         ;
 
 
