@@ -42,6 +42,8 @@
     svg {
       background: rgba(205, 202, 202, 0.2);
       z-index: -1;
+      width: 100%;
+      height: 100%;
       /*pointer-events: none;*/
     }
 
@@ -62,9 +64,9 @@
 </head>
 
 <body onload="checkUrl()">
-  <table width="100%">
+  <table>
     <tr>
-      <td>
+      <td id="datatd">
         <div id="data">
           <p id="vertix">节点数: </p>
           <p id="edge">边数: </p>
@@ -116,17 +118,17 @@
           <div class="force">
             <b>Simulation properties</b><br />
             <label title="change strength of Simulation'force">
-							strength
+							strength: 
                 <output id="link_strengthSliderOutput">1</output>
 							<input id="link_strengthSliderInput" type="range" min="0.3" max="1" value="1" step="0.1" oninput="d3.select('#link_strengthSliderOutput').text(value);">
 						</label>
             <label title="change distance of Simulation'force">
-							log10(distance)
+							log32(distance): 
                 <output id="link_distanceSliderOutput">0</output>
 							<input id="link_distanceSliderInput" type="range" min="-1" max="1" value="0" step="0.1" oninput="d3.select('#link_distanceSliderOutput').text(value);">
 						</label>
             <label title="change iterations of Simulation'force">
-							iterations
+							iterations: 
                 <output id="link_iterationsSliderOutput">20</output>
 							<input id="link_iterationsSliderInput" type="range" min="10" max="50" value="20" step="1" oninput="d3.select('#link_iterationsSliderOutput').text(value);">
 						</label>
@@ -135,13 +137,13 @@
           <div class="force">
             <b>forceX properties</b><br />
             <label>
-							strength
+							strength: 
                 <output id="forceX_StrengthSliderOutput">0.4</output>
 							<input id="forceX_StrengthSliderInput" type="range" min="0" max="1" value="0.4" step="0.01" oninput="d3.select('#forceX_StrengthSliderOutput').text(value);">
 						</label>
             <br />
             <label title="The X location that the force will push the nodes to (NOTE: This demo multiplies by the svg width)">
-							x
+							x: 
                 <output id="forceX_XSliderOutput">0.5</output><br />
 							<input id="forceX_XSliderInput" type="range" min="0" max="1" value="0.5" step="0.01" oninput="d3.select('#forceX_XSliderOutput').text(value);">
 						</label>
@@ -149,21 +151,21 @@
           <div class="force">
             <b>forceY properties</b><br />
             <label>
-							strength
+							strength: 
                 <output id="forceY_StrengthSliderOutput">0.4</output>
 							<input id="forceY_StrengthSliderInput" type="range" min="0" max="1" value="0.4" step="0.01" oninput="d3.select('#forceY_StrengthSliderOutput').text(value);">
 						</label>
             <br />
             <label title="The Y location that the force will push the nodes to (NOTE: This demo multiplies by the svg width)">
-							y
+							y: 
                 <output id="forceY_YSliderOutput">0.5</output><br />
 							<input id="forceY_YSliderInput" type="range" min="0" max="1" value="0.5" step="0.01" oninput="d3.select('#forceY_YSliderOutput').text(value);">
 						</label>
           </div>
         </div>
       </td>
-      <td>
-        <svg id="canvas" width="1100" height="700"></svg>
+      <td id="svgtd" style="width:100%; height:800px; vertical-align:top;">
+        <svg id="canvas"></svg>
       </td>
     </tr>
   </table>
@@ -210,8 +212,18 @@
       initTopology();
     }
 
-    //获取svg对象
+    //svg对象及属性
     var svg;
+    var svgWidth;
+    var svgHeight;
+    function updateSvgAttr() {
+      // svgWidth = +svg.attr("width");
+      // svgHeight = +svg.attr("height");
+      svgWidth = $('#svgtd').width();
+      svgHeight = $('#datatd').height();
+      $('#svgtd').height(svgHeight);
+    }
+
     //点的颜色映射
     var nodeColorMap;
     //边的颜色映射
@@ -224,9 +236,8 @@
 
     //初始化拓扑图
     function initTopology() {
-      svg = d3.select("svg"),
-        width = +svg.attr("width"),
-        height = +svg.attr("height");
+      svg = d3.select("svg");
+      updateSvgAttr();
       nodeColorMap = googleColors20;//d3.scaleOrdinal(d3.schemeCategory20);
       linkColorMap = d3.scaleOrdinal(d3.schemeCategory20c);
       readData();
@@ -243,7 +254,7 @@
 
     function getLabel(d) { return d.label; }
     function getLabelColor(d) { return (d.labelcolor || "black"); }
-    function getDist(d) { return (d.length || 1) * Math.pow(10, forceProperties.link.distance); }
+    function getDist(d) { return (ignoreDist || d.length || 1) * Math.pow(32, forceProperties.link.distance); }
 
     //读取json文件
     function readData() {
@@ -278,6 +289,8 @@
 
     //是否固定被拖拽的点
     var fixMode = true;
+    //是否忽略距离设置
+    var ignoreDist = true;
 
     var simulation;
 
@@ -309,13 +322,16 @@
         + "h [字母h]: 查看帮助\n"
         + "l [字母l]: 切换所有节点的标签显示\n"
         + "f [字母f]: 切换拖拽固定模式\n"
+        + "d [字母d]: 切换节点距离相等\n"
         + "← [方向左键]: 加载前一个拓扑\n"
         + "→ [方向右键]: 加载下一个拓扑\n"
+        + "↓ [方向下键]: 停止迭代\n"
+        + "↑ [方向上键]: 继续迭代\n"
         + "s [字母s]: 保存坐标\n"
-        + "e [字母e]: 导出图片\n"
-        + "p [字母p]: 暂停迭代\n");
+        + "e [字母e]: 导出图片\n");
     }
 
+    //形状生成器 (参考 https://bl.ocks.org/mbostock/6d9d75ee13abbcfea6e0)
     var symbol = d3.symbol();
     function generateSymbol(shape, radius) {
       symbol.type(d3.symbols[shape % d3.symbols.length]).size(radius * 10);
@@ -373,12 +389,33 @@
       }
     }
 
+    /*修改Simulation属性*/
+    function updateForces() {
+      // get each force by name and update the properties
+      simulation.force("link")
+        .strength(forceProperties.link.strength)
+        .distance(getDist)
+        .iterations(forceProperties.link.iterations)
+        .links(links);
+
+      simulation.force("xl", d3.forceX().strength(forceProperties.forceX.strength).x(svgWidth * (0.5 * forceProperties.forceX.x)));
+      simulation.force("xm", d3.forceX().strength(forceProperties.forceX.strength).x(svgWidth * 0.5));
+      simulation.force("xr", d3.forceX().strength(forceProperties.forceX.strength).x(svgWidth * (1 - 0.5 * forceProperties.forceX.x)));
+      simulation.force("yt", d3.forceY().strength(forceProperties.forceY.strength).y(svgHeight * (0.5 * forceProperties.forceY.y)));
+      simulation.force("ym", d3.forceY().strength(forceProperties.forceY.strength).y(svgHeight * 0.5));
+      simulation.force("yb", d3.forceY().strength(forceProperties.forceY.strength).y(svgHeight * (1 - 0.5 * forceProperties.forceY.y)));
+
+      // updates ignored until this is run
+      // restarts the simulation (important if simulation has already slowed down)
+      simulation.alpha(1).restart();
+    }
+
     //创建图的模拟器
     function Simulation() {
       simulation = d3.forceSimulation()
         .force("link", d3.forceLink().distance(getDist).strength(1).iterations(20))
         .force("charge", d3.forceManyBody().strength(-400))
-        // .force("center", d3.forceCenter(width / 2, height / 2))
+        // .force("center", d3.forceCenter(svgWidth / 2, svgHeight / 2))
         // .force('collision', d3.forceCollide().radius(10))
         ;
 
@@ -436,9 +473,9 @@
         d3.select("#scale").text("缩放比例: " + parseInt(d3.event.transform.k * 100) + "%");
       }
       zoom = d3.zoom()
-        .scaleExtent([0.2, 100])
-        // .translateExtent([[0, 0], [svg.attr("width"), svg.attr("height")]])
-        // .extent([[0, 0], [svg.attr("width"), svg.attr("height")]])
+        .scaleExtent([0.015625, 64]) // [1/64, 64]
+        // .translateExtent([[0, 0], [svgWidth, svgHeight]])
+        // .extent([[0, 0], [svgWidth, svgHeight]])
         .on("zoom", zoomed);
       svg.call(zoom);
 
@@ -486,27 +523,6 @@
             globalLink.attr("opacity", function () { return $("#link_opacitySliderOutput").val(); });
           }
         });
-
-      /*修改Simulation属性*/
-      function updateForces() {
-        // get each force by name and update the properties
-        simulation.force("link")
-          .strength(forceProperties.link.strength)
-          .distance(getDist)
-          .iterations(forceProperties.link.iterations)
-          .links(links);
-
-        simulation.force("xl", d3.forceX().strength(forceProperties.forceX.strength).x(width * (0.5 * forceProperties.forceX.x)));
-        simulation.force("xm", d3.forceX().strength(forceProperties.forceX.strength).x(width * 0.5));
-        simulation.force("xr", d3.forceX().strength(forceProperties.forceX.strength).x(width * (1 - 0.5 * forceProperties.forceX.x)));
-        simulation.force("yt", d3.forceY().strength(forceProperties.forceY.strength).y(height * (0.5 * forceProperties.forceY.y)));
-        simulation.force("ym", d3.forceY().strength(forceProperties.forceY.strength).y(height * 0.5));
-        simulation.force("yb", d3.forceY().strength(forceProperties.forceY.strength).y(height * (1 - 0.5 * forceProperties.forceY.y)));
-
-        // updates ignored until this is run
-        // restarts the simulation (important if simulation has already slowed down)
-        simulation.alpha(1).restart();
-      }
 
       //strength
       d3.select("#link_strengthSliderInput")
@@ -560,7 +576,7 @@
           updateForces();
         });
 
-      //停止迭代
+      //显示帮助
       d3.select("#showHelp").on("click", showHelp);
 
       //另存为图片
@@ -594,21 +610,21 @@
       function positionNode(d) {
         tvlog(d);
         // d.x = d.x - 5/2 < 0     ? 5 : d.x ;
-        // d.x = d.x + 5/2 > width ? width - 5 : d.x ;
+        // d.x = d.x + 5/2 > svgWidth ? svgWidth - 5 : d.x ;
         // d.y = d.y - 5/2 < 0      ? 5 : d.y ;
-        // d.y = d.y + 5/2 > height ? height - 5 : d.y ;
+        // d.y = d.y + 5/2 > svgHeight ? svgHeight - 5 : d.y ;
         return "translate(" + d.x + "," + d.y + ")";
       }
 
       updateForces();
     }
 
-    //快捷键设置 (https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
+    //快捷键设置 (参考 https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
     $(document).keydown(function (e) {
-      var key = e.which;
-      if (key == 37 || key == 39) {
-        e.preventDefault();
-      }
+      // var key = e.which;
+      // if (key == 37 || key == 39) {
+      //   e.preventDefault();
+      // }
     });
 
     $(document).keyup(function (e) {
@@ -625,6 +641,8 @@
         toggleAllLabels();
       } else if (key == 70) {//f键, 拖拽进入固定模式
         fixMode = !fixMode;
+      } else if (key == 68) {//d键, 切换节点距离相等
+        ignoreDist = !ignoreDist;
       } else if (key == 37) {//左箭头, 加载前一个拓扑 (文件用数字命名)
         var newFileName;
         //clear svg
@@ -654,12 +672,14 @@
           newFileName = num + ".json";
         }
         setUrl(newFileName);
-      } else if (key == 83) {//保存坐标
-        saveCoord();
-      } else if (key == 69) {//导出图片
-        exportFigure();
-      } else if (key == 80) {//暂停迭代
+      } else if (key == 40) {//下箭头, 暂停迭代
         simulation.stop();
+      } else if (key == 38) {//上箭头, 继续迭代
+        updateForces();
+      } else if (key == 83) {//s键, 保存坐标
+        saveCoord();
+      } else if (key == 69) {//e键, 导出图片
+        exportFigure();
       }
     });
   </script>

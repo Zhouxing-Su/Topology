@@ -1,0 +1,131 @@
+{
+    "links": [
+        {
+            "color": 2,
+            "id": 0,
+            "length": 1,
+            "opacity": 1,
+            "source": "0",
+            "style": 0,
+            "target": "1",
+            "width": 3
+        },
+        {
+            "color": 2,
+            "id": 1,
+            "length": 1,
+            "opacity": 1,
+            "source": "1",
+            "style": 0,
+            "target": "2",
+            "width": 2
+        },
+        {
+            "color": 2,
+            "id": 2,
+            "length": 3,
+            "opacity": 1,
+            "source": "0",
+            "style": 0,
+            "target": "3",
+            "width": 9
+        },
+        {
+            "color": 2,
+            "id": 3,
+            "length": 1,
+            "opacity": 1,
+            "source": "0",
+            "style": 0,
+            "target": "4",
+            "width": 10
+        },
+        {
+            "color": 2,
+            "id": 4,
+            "length": 2,
+            "opacity": 1,
+            "source": "2",
+            "style": 0,
+            "target": "4",
+            "width": 4
+        },
+        {
+            "color": 2,
+            "id": 5,
+            "length": 1,
+            "opacity": 1,
+            "source": "1",
+            "style": 0,
+            "target": "3",
+            "width": 4
+        },
+        {
+            "color": 2,
+            "id": 6,
+            "length": 1,
+            "opacity": 1,
+            "source": "2",
+            "style": 0,
+            "target": "3",
+            "width": 1
+        },
+        {
+            "color": 2,
+            "id": 7,
+            "length": 1,
+            "opacity": 1,
+            "source": "3",
+            "style": 0,
+            "target": "4",
+            "width": 2
+        }
+    ],
+    "nodes": [
+        {
+            "color": 0,
+            "id": 0,
+            "label": "0",
+            "labelcolor": "black",
+            "opacity": 1,
+            "radius": 2,
+            "shape": 4
+        },
+        {
+            "color": 0,
+            "id": 1,
+            "label": "1",
+            "labelcolor": "black",
+            "opacity": 1,
+            "radius": 2,
+            "shape": 0
+        },
+        {
+            "color": 0,
+            "id": 2,
+            "label": "2",
+            "labelcolor": "black",
+            "opacity": 1,
+            "radius": 2,
+            "shape": 0
+        },
+        {
+            "color": 1,
+            "id": 3,
+            "label": "3",
+            "labelcolor": "black",
+            "opacity": 1,
+            "radius": 2,
+            "shape": 0
+        },
+        {
+            "color": 0,
+            "id": 4,
+            "label": "4",
+            "labelcolor": "black",
+            "opacity": 1,
+            "radius": 2,
+            "shape": 4
+        }
+    ]
+}
