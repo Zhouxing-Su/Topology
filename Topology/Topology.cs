@@ -20,12 +20,12 @@ namespace Topology {
             public TopologyVisualization visualize() {
                 TopologyVisualization tpv = new TopologyVisualization();
 
-                int n = 0;
-                tpv.nodes = new TopologyVisualization.Node[Nodes.Length + Relay.Length];
-                for (; n < Nodes.Length; ++n) {
-                    tpv.nodes[n] = new TopologyVisualization.Node();
-                    TopologyVisualization.Node node = tpv.nodes[n];
-                    node.id = Nodes[n].id;
+                Dictionary<int, int> idMap = new Dictionary<int, int>();
+                tpv.nodes = new TopologyVisualization.Node[Nodes.Length];
+                for (int i = 0; i < Nodes.Length; ++i) {
+                    tpv.nodes[i] = new TopologyVisualization.Node();
+                    TopologyVisualization.Node node = tpv.nodes[i];
+                    node.id = Nodes[i].id;
                     node.label = node.id.ToString();
                     node.labelcolor = "black";
                     node.radius = 2; //Nodes[n].cost;
@@ -36,21 +36,10 @@ namespace Topology {
                     } else {
                         node.shape = TopologyVisualization.Node.Shape.Circle;
                     }
+                    idMap[node.id] = i;
                 }
-                for (int i = 0; i < Relay.Length; ++n, ++i) {
-                    tpv.nodes[n] = new TopologyVisualization.Node();
-                    TopologyVisualization.Node node = tpv.nodes[n];
-                    node.id = Relay[i].id;
-                    node.label = node.id.ToString();
-                    node.labelcolor = "black";
-                    node.radius = 2; //Relay[i].cost;
-                    node.color = 1;
-                    node.opacity = 1;
-                    if ((node.id == Source) || (node.id == Target)) {
-                        node.shape = TopologyVisualization.Node.Shape.Star;
-                    } else {
-                        node.shape = TopologyVisualization.Node.Shape.Circle;
-                    }
+                for (int i = 0; i < Relay.Length; ++i) {
+                    tpv.nodes[idMap[Relay[i].id]].color = 1;
                 }
 
                 tpv.links = new TopologyVisualization.Link[Edges.Length];
