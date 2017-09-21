@@ -1,82 +1,88 @@
 # 拓扑图可视化
-使用了[D3v4.js](https://github.com/d3/d3)库
-在给出的[Curved Links](https://bl.ocks.org/mbostock/4600693)例子上修改、增加功能。
 
-## 使用到的js库
-- d3-v4
-- jQuery
+基于 [D3v4.js](https://github.com/d3/d3) 及其示例 [Curved Links](https://bl.ocks.org/mbostock/4600693) 的拓扑图可视化工具.
 
-## 使用方法:
+## 基本功能
 
-    localhost:port[/index.html]?0.json
-    
-    
-## 拓扑图界面内的操作方式和基本元素解释
+| 实现情况 | 功能                                       |
+| ---- | ---------------------------------------- |
+| [x]  | 设置节点标签                                   |
+| [x]  | 设置节点标签颜色                                 |
+| [x]  | 设置节点大小                                   |
+| [x]  | 设置节点颜色                                   |
+| [x]  | 设置节点透明度                                  |
+| [x]  | 设置节点形状                                   |
+| [x]  | 设置链路参考长度                                 |
+| [x]  | 设置链路宽度 (粗细)                              |
+| [x]  | 设置链路颜色                                   |
+| [x]  | 设置链路透明度                                  |
+| [x]  | 设置链路线型                                   |
+| [x]  | 两点间多条不重合的链路                              |
+| [x]  | 切换节点标签显示隐藏                               |
+| [x]  | 智能拖拽 (点击鼠标选中离点击位置最近的节点)                  |
+| [x]  | 缩放拓扑                                     |
+| [ ]  | 缩放拓扑但不改变节点大小链路粗细与标签字号                    |
+| [x]  | 切换拓扑图                                    |
+| [x]  | 手动停止迭代固定拓扑                               |
+| [x]  | 将当前节点分布保存为几何图 (保存节点坐标)                   |
+| [x]  | 将当前节点分布导出为图片                             |
+| [ ]  | 保证缩放比例为 100% 时节点不超出边界                    |
+| [ ]  | 自动调参或者允许用户手动调参获取更好的显示效果                  |
+| [ ]  | 启发式初始解生成 (使用**贪心规则**或**用户给定坐标**确定初始节点分布) |
+| [ ]  | 拓扑图完全相同时快速切换解向量显示                        |
+| [ ]  | 拓扑图同构时快速切换解向量显示                          |
 
-### 图中可进行的操作
-1. 当点击节点时会隐藏或者显示该节点的ID，同时在Node properties显示出该节点的信息
-2. 当点击边时会在Link properties显示出该边的信息
-3. 在图中可通过滚轮放大缩小图片
 
-### 按钮的使用
-1. 隐藏所有标签：即隐藏所有节点的信息
-2. 显示所有标签：即显示所有节点的信息
-3. 停止迭代拓扑图：停止拓扑图的迭代，再次点击继续迭代
-4. 保存为Json文件：将节点的信息保存到Json中
-5. 将svg另存为图片：将svg以图片的形式保存
+## 使用方法
 
-### Simulation properties
-1. Strength：节点间斥力的调节
-2. Distance：边长度的调节
-3. Iterations：迭代次数的调节
+配置好 web 服务器后, 在浏览器地址栏输入 `$(address):$(port)[/index.html]?$(file).json` 访问.
+其中 `$(address)` 是服务器的 IP 地址或域名, `$(port)` 是端口, `$(file)` 是输入文件名, 使用数字命名可以使用方向键翻页.
 
-### Note properties
-1. Node'ID：表示当前显示节点的ID
-2. Color：节点颜色的调节
-3. Radius：节点大小的调节
+示例
+- http://suzhouxing.coding.me/Demo/NetworkVisualization.RSA/index.html?0.json
+- http://127.0.0.1?0.json
+- http://127.0.0.1:8080?0.json
 
-### Link properties
-1. Link'ID：表示当前显示边的ID
-2. Color：边的颜色的调节
-3. Width：边的宽度的调节
+由于安全原因, chrome 等浏览器禁止 js 读写本地文件, 需要在启动时添加 `--allow-file-access-from-files` 参数才能不搭建 web 服务器使用该工具.
 
-## 修改日志：
-- 20170717增加了显示/隐藏节点标签功能。
-- 20170718增加了显示/隐藏全部节点标签功能、给边增加宽度和颜色的功能、视图缩放功能。
-- 20170719增加了以鼠标为中心的缩放功能、点击鼠标选中离点击位置最近的节点功能、边缘限制(点限制在svg的范围内)。
-- 20170720增加了链路长度、修改了边缘斥力(直接贴附边缘而不是给一个随机值)。
-- 20170721
-    - 完成输入文件修改格式的问题(昨天修改格式之后图展不开，一直没找到问题，今早发现是由于link的起点必须用'source'，终点必须用'target')。
-    - 增加切换拓扑图功能(还有bug)。
-- 20170724
-    - 手动暂停迭代固定拓扑
-    - 完成切换拓扑图的功能(通过将文件名在url后给出，而不是在js函数参数中给出，每次切换刷新页面)
-- 20170725
-    - 增加修改节点、边属性功能
-    - 增加迭代次数控制
-- 20170726 基本完成所有要求
-    - 更改修改节点、边属性功能(将表格改为滑动条)
-    - 更改试图缩放功能(在svg下新建一个container标签，每次缩放container而不是整个svg，好处是放大时不会覆盖按钮，还自动实现了拖拽)
-    - 增加修改Simulation属性功能(包括strength、distance  、iterations)，同样是用滑动条实现改变
-    - 增加保存节点坐标功能，由于js无法保存文件，因而将数据写成json格式打印到控制台
-- 20170728
-    - 修改保存节点坐标功能：将节点坐标保存为文件的功能
-- 20170729
-    - 增加将svg保存为图片的功能
-- 20170730
-    - 整理代码，将其按功能切分为若干部分
-    - 设置边的id，使点击的时候在滑动条上显示边id
-    - 设置边的透明度
-- 20170731
-    - 利用bootstrap优化整个拓扑图的显示效果
-    - 整理README文档，解释页面内的具体使用方式
-- 20170801
-    - 增加修改点/边透明度的功能
-- 20170802
-	- 修改命名方式
-	- 增加固定点的功能，当鼠标左键点击点同时按住f键，进入固定点的模式，再次点击左键同时按住非f键退出
-- 20170812
-    - 增加修改forceX和forceY功能
 
-### 当前效果图可访问[网页](https://lewistian.github.io/show/?0.json)
+## 输入文件格式
 
+输入文件为 json 格式, 有详尽的配置控制节点和链路的样式.
+具体定义参考 `generator` 分支的 `TopologyVisualization.cs` 文件, 使用时将 `TopologyVisualization` 类序列化成 json 格式即可.
+
+```c#
+namespace Topology {
+    public class TopologyVisualization {
+        public class Node {
+            public enum Shape { Circle, Cross, Diamond, Square, Star, Triangle, Wye }
+
+            public int id;
+            public string label;
+            public string labelcolor;
+            public int radius;
+            public int color;
+            public double opacity;
+            public Shape shape;
+        }
+
+
+        public class Link {
+            public enum Style { Solid, DenseDotted, SparseDashed, DenseDashed, SparseDotted, DottedDash }
+
+            public int id;
+            public string source;
+            public string target;
+            public int length;
+            public int width;
+            public int color;
+            public double opacity;
+            public Style style;
+        }
+
+
+        public Node[] nodes;
+        public Link[] links;
+    }
+}
+```
