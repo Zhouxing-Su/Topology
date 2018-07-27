@@ -179,6 +179,10 @@
     // var tvlog = console.log;
     var tvlog = function () { };
 
+    function setUrl(newFileName) {
+      window.location.search = newFileName;
+    }
+
     //文件名
     var jsonFileName;
     //全局点
@@ -631,10 +635,6 @@
       var key = e.which;
       tvlog(key);
 
-      function setUrl(newFileName) {
-        window.location.href = "http://" + window.location.host + window.location.pathname + "?" + newFileName;
-      }
-
       if (key == 72) {//h键, 查看帮助
         showHelp();
       } else if (key == 76) {//l键, 切换标签显示
@@ -659,7 +659,6 @@
           }
         }
         setUrl(newFileName);
-        // setTopology(newFileName);
       } else if (key == 39) {//右键头, 加载下一个拓扑 (文件用数字命名)
         d3.selectAll("svg > *").remove();
         var newFileName;
